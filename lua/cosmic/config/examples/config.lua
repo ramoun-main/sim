@@ -1,4 +1,4 @@
--- Override Cosmic configuration options
+-- Override Cosmic configuration ptions
 
 -- You can require null-ls if needed
 -- local null_ls = require('null-ls')

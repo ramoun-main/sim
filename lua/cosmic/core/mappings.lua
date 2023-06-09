@@ -1,4 +1,8 @@
 local map = require('cosmic.utils').map
+local utils = require('cosmic.utils')
+local is_available = utils.is_available
+
+local maps = { i = {}, n = {}, v = {}, t = {} }
 
 -- Quickfix mappings
 map('n', '<leader>ck', ':cexpr []<cr>', { desc = 'Clear list' })
@@ -65,17 +69,71 @@ map('n', '<leader>tp', ':tabp<CR>') --  go to previous tab
 
 map('n', '<leader>e', ':NvimTreeToggle<CR>') -- toggle file explorer
 
-map('n', '<C-j>', '<C-w>j', { desc = 'Move to below split' })
-map('n', '<C-k>', '<C-w>k', { desc = 'Move to above split' })
-map('n', '<C-l>', '<C-w>l', { desc = 'Move to right split' })
-map('n', '<C-Up>', '<cmd>resize -2<CR>', { desc = 'Resize split up' })
-map('n', '<C-Down>', '<cmd>resize +2<CR>', { desc = 'Resize split down' })
-map('n', '<C-Left>', '<cmd>vertical resize -2<CR>', { desc = 'Resize split left' })
-map('n', '<C-Right>', '<cmd>vertical resize +2<CR>', { desc = 'Resize split right' })
-  (
-  --[[ maps.n["<leader>w"] = { "<cmd>w<cr>", desc = "Save" } ]]
-[[ maps.n["<leader>q"] = { "<cmd>confirm q<cr>", desc = "Quit" } ]])
-  ([[ maps.n["<leader>n"] = { "<cmd>enew<cr>", desc = "New File" } ]])
+if is_available('smart-splits.nvim') then
+  map('n', '<C-h>', function()
+    require('smart-splits').move_cursor_left()
+  end)
+  map('n', '<C-j>', function()
+    require('smart-splits').move_cursor_down()
+  end, { desc = 'Move to below split' })
+  --[[ maps.n['<C-k>'] = { ]]
+  --[[   function() ]]
+  --[[     require('smart-splits').move_cursor_up() ]]
+  --[[   end, ]]
+  --[[   desc = 'Move to above split', ]]
+  --[[ } ]]
+  --[[ maps.n['<C-l>'] = { ]]
+  --[[   function() ]]
+  --[[     require('smart-splits').move_cursor_right() ]]
+  --[[   end, ]]
+  --[[   desc = 'Move to right split', ]]
+  --[[ } ]]
+  --[[ maps.n['<C-Up>'] = { ]]
+  --[[   function() ]]
+  --[[     require('smart-splits').resize_up() ]]
+  --[[   end, ]]
+  --[[   desc = 'Resize split up', ]]
+  --[[ } ]]
+  --[[ maps.n['<C-Down>'] = { ]]
+  --[[   function() ]]
+  --[[     require('smart-splits').resize_down() ]]
+  --[[   end, ]]
+  --[[   desc = 'Resize split down', ]]
+  --[[ } ]]
+  --[[ maps.n['<C-Left>'] = { ]]
+  --[[   function() ]]
+  --[[     require('smart-splits').resize_left() ]]
+  --[[   end, ]]
+  --[[   desc = 'Resize split left', ]]
+  --[[ } ]]
+  --[[ maps.n['<C-Right>'] = { ]]
+  --[[   function() ]]
+  --[[     require('smart-splits').resize_right() ]]
+  --[[   end, ]]
+  --[[   desc = 'Resize split right', ]]
+  --[[ } ]]
+else
+  map('n', '<leader>hi', '<cmd>echo "hello"<cr>', { desc = 'Move to left split' })
+  --[[ maps.n['<C-j>'] = { '<C-w>j', desc = 'Move to below split' } ]]
+  --[[ maps.n['<C-k>'] = { '<C-w>k', desc = 'Move to above split' } ]]
+  --[[ maps.n['<C-l>'] = { '<C-w>l', desc = 'Move to right split' } ]]
+  --[[ maps.n['<C-Up>'] = { '<cmd>resize -2<CR>', desc = 'Resize split up' } ]]
+  --[[ maps.n['<C-Down>'] = { '<cmd>resize +2<CR>', desc = 'Resize split down' } ]]
+  --[[ maps.n['<C-Left>'] = { '<cmd>vertical resize -2<CR>', desc = 'Resize split left' } ]]
+  --[[ maps.n['<C-Right>'] = { '<cmd>vertical resize +2<CR>', desc = 'Resize split right' } ]]
+end
+
+--[[ map('n', '<C-j>', '<C-w>j', { desc = 'Move to below split' }) ]]
+--[[ map('n', '<C-k>', '<C-w>k', { desc = 'Move to above split' }) ]]
+--[[ map('n', '<C-l>', '<C-w>l', { desc = 'Move to right split' }) ]]
+--[[ map('n', '<C-Up>', '<cmd>resize -2<CR>', { desc = 'Resize split up' }) ]]
+--[[ map('n', '<C-Down>', '<cmd>resize +2<CR>', { desc = 'Resize split down' }) ]]
+--[[ map('n', '<C-Left>', '<cmd>vertical resize -2<CR>', { desc = 'Resize split left' }) ]]
+--[[ map('n', '<C-Right>', '<cmd>vertical resize +2<CR>', { desc = 'Resize split right' }) ]]
+
+--[[ maps.n["<leader>w"] = { "<cmd>w<cr>", desc = "Save" } ]]
+-- [[ maps.n["<leader>q"] = { "<cmd>confirm q<cr>", desc = "Quit" } ]])
+--  ([[ maps.n["<leader>n"] = { "<cmd>enew<cr>", desc = "New File" } ]])
 --[[ maps.n["gx"] = { utils.system_open, desc = "Open the file under cursor with system app" } ]]
 --[[ maps.n["<C-s>"] = { "<cmd>w!<cr>", desc = "Force write" } ]]
 --[[ maps.n["<C-q>"] = { "<cmd>q!<cr>", desc = "Force quit" } ]]
