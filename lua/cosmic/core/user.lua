@@ -30,9 +30,9 @@ local default_config = {
       --[[ 'actionlint', ]]
       --[[ 'eslint_d', ]]
       --[[ 'prettierd', ]]
+      --[[ 'gopls', ]]
       'bashls',
       'cssls',
-      'gopls',
       'graphql',
       'html',
       'jsonls',
@@ -45,6 +45,7 @@ local default_config = {
     },
     -- lsp servers that should be enabled
     servers = {
+      --[[ gopls = true, ]]
       astro = true,
       tailwindcss = true,
       jsonls = {
@@ -54,7 +55,6 @@ local default_config = {
       lua_ls = {
         format = false,
       },
-      gopls = true,
       html = true,
       tsserver = {
         format = false,

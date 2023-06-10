@@ -55,7 +55,10 @@ return {
           name = '+tree',
         },
         s = {
-          name = '+session',
+          name = '+save',
+        },
+        S = {
+          name = '+Session',
         },
         t = {
           name = '+tab',
