@@ -48,6 +48,9 @@ map('n', '<C-Right>', ':vertical resize +2<CR>', { desc = 'Vertical Resize +2' }
 map('i', 'jj', '<ESC>')
 map('i', 'jk', '<ESC>')
 
+map('i', '<C-j>', '<C-e')
+map('i', '<C-k>', '<C-y>')
+
 -- switch gM and gm
 map('n', 'gM', 'gm')
 map('n', 'gm', 'gM')
