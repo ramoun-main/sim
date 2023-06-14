@@ -13,3 +13,7 @@
 - folding html
 - next, react, css-modules support for nvim/vim
 - auto import rename
+- setup nvim(vim) for rust
+- setup nvim(vim) for react
+- setup nvim(vim) for readme
+
