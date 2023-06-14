@@ -2,7 +2,7 @@ local map = require('cosmic.utils').map
 local utils = require('cosmic.utils')
 local is_available = utils.is_available
 
-local maps = { i = {}, n = {}, v = {}, t = {} }
+--[[ local maps = { i = {}, n = {}, v = {}, t = {} } ]]
 
 -- Quickfix mappings
 map('n', '<leader>ck', ':cexpr []<cr>', { desc = 'Clear list' })
@@ -48,8 +48,8 @@ map('n', '<C-Right>', ':vertical resize +2<CR>', { desc = 'Vertical Resize +2' }
 map('i', 'jj', '<ESC>')
 map('i', 'jk', '<ESC>')
 
-map('i', '<C-j>', '<C-e')
-map('i', '<C-k>', '<C-y>')
+--[[ map('i', '<C-j>', '<C-e') ]]
+--[[ map('i', '<C-k>', '<C-y>') ]]
 
 -- switch gM and gm
 map('n', 'gM', 'gm')
@@ -81,12 +81,12 @@ if is_available('smart-splits.nvim') then
   map('n', '<C-h>', function()
     require('smart-splits').move_cursor_left()
   end, { desc = 'Move to Left split' })
-  map('n', '<C-j>', function()
-    require('smart-splits').move_cursor_down()
-  end, { desc = 'Move to below split' })
-  map('n', '<C-k>', function()
-    require('smart-splits').move_cursor_up()
-  end, { desc = 'Move to above split' })
+  --[[ map('n', '<C-j>', function() ]]
+  --[[   require('smart-splits').move_cursor_down() ]]
+  --[[ end, { desc = 'Move to below split' }) ]]
+  --[[ map('n', '<C-k>', function() ]]
+  --[[   require('smart-splits').move_cursor_up() ]]
+  --[[ end, { desc = 'Move to above split' }) ]]
   map('n', '<C-l>', function()
     require('smart-splits').move_cursor_right()
   end, { desc = 'Move to right split' })
@@ -408,7 +408,7 @@ map('n', '<leader>n', '<cmd>enew<cr>', { desc = 'New File' })
 map('n', '<C-s>', '<cmd>w!<cr>', { desc = 'Force write' })
 map('n', '<C-q>', 'cmd>q!<cr>', { desc = 'Force quit' })
 
--- NOP
+-- NOP!!!
 --
 -- vim.keymap.set("n", "Q", "<nop>", {desc='"no operation." It essentially disables the mapping and makes the key sequence do nothing'})
 -- vim.keymap.set("n", "<Left>", "<nop>")
