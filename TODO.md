@@ -16,4 +16,8 @@
 - setup nvim(vim) for rust
 - setup nvim(vim) for react
 - setup nvim(vim) for readme
-
+- check other nvim/vim frameworks and tools
+- add terminal to nvim
+- navigate terminal with keyboard
+- vim vs emacs
+- emacs doom -> rusti

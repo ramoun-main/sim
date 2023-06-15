@@ -17,11 +17,6 @@ map('n', '<leader>bp', ':bprev<cr>', { desc = 'Prev buffer' })
 map('n', '<leader>bn', ':bnext<cr>', { desc = 'Next buffer' })
 map('n', '<leader>bd', ':bdelete<cr>', { desc = 'Delete buffer' })
 
--- tab navigation
-map('n', '<leader>tp', ':tabprevious<cr>', { desc = 'Prev tab' })
-map('n', '<leader>tn', ':tabnext<cr>', { desc = 'Next tab' })
-map('n', '<leader>td', ':tabclose<cr>', { desc = 'Close tab' })
-
 -- plugin management
 map('n', '<leader>pc', ':Lazy check<cr>', { desc = 'Check plugins' })
 map('n', '<leader>pu', ':Lazy update<cr>', { desc = 'Update plugins' })
@@ -42,14 +37,11 @@ map('n', '<C-Down>', ':resize +2<CR>', { desc = 'Resize +2' })
 map('n', '<C-Left>', ':vertical resize -2<CR>', { desc = 'Vertical Resize -2' })
 map('n', '<C-Right>', ':vertical resize +2<CR>', { desc = 'Vertical Resize +2' })
 
--- my custom remaps (entrirely)
+---------------------------------- my custom remaps (entrirely) ----------------------------------
 
 -- use jj/jk to exit insert mode
 map('i', 'jj', '<ESC>')
 map('i', 'jk', '<ESC>')
-
---[[ map('i', '<C-j>', '<C-e') ]]
---[[ map('i', '<C-k>', '<C-y>') ]]
 
 -- switch gM and gm
 map('n', 'gM', 'gm')
@@ -61,21 +53,36 @@ map('n', '<leader>nh', ':nohl<CR>')
 -- delete single character without copying into register
 map('n', 'x', '"_x')
 
--- increment/decrement numbers
+-- increment/decrement numbers (e.g: -13)
 map('n', '<leader>+', '<C-a>') -- increment
 map('n', '<leader>-', '<C-x>') -- decrement
 
 -- tab management
 map('n', '<leader>to', ':tabnew<CR>', { desc = 'open new tab' })
 map('n', '<leader>tx', ':tabclose<CR>', { desc = 'close currentab' })
---[[ map('n', '<leader>tn', ':tabn<CR>', { desc = 'go to next tab tab' }) ]]
-map('n', 'L', ':tabn<CR>', { desc = 'go to next tab tab' })
+
+-- tab navigation
+map('n', '<leader>tp', ':tabprevious<cr>', { desc = 'Prev tab' })
 --[[ map('n', '<leader>tp', ':tabp<CR>', { desc = 'go to previous tab' }) ]]
 map('n', 'H', ':tabp<CR>', { desc = 'go to previous tab' })
+map('n', '<leader>tn', ':tabnext<cr>', { desc = 'Next tab' })
+--[[ map('n', '<leader>tn', ':tabn<CR>', { desc = 'go to next tab tab' }) ]]
+map('n', 'L', ':tabn<CR>', { desc = 'go to next tab tab' })
+map('n', '<leader>td', ':tabclose<cr>', { desc = 'Close tab' })
 
 -- sidebar
 
 map('n', '<leader>e', ':NvimTreeToggle<CR>') -- toggle file explorer
+
+-- splits
+map('n', '<leader>sv', '<C-w>v') -- split window vertically
+map('n', '<leader>sh', '<C-w>s') -- split window horizontally
+map('n', '<leader>sx', ':close<CR>') -- close current split window
+-- vim-maximizer
+map('n', '<leader>ie', '<C-w>=', { desc = 'make split windows equal width & height' })
+map('n', '<leader>w', '<C-w>q', { desc = 'Close a Split' })
+map('n', '\\', '<cmd>vsplit<cr>', { desc = 'Vertical Split' })
+map('n', '|', '<cmd>split<cr>', { desc = 'Horizontal Split' })
 
 if is_available('smart-splits.nvim') then
   map('n', '<C-h>', function()
@@ -113,17 +120,7 @@ else
   map('n', '<C-Right>', '<cmd>vertical resize +2<CR>', { desc = 'Resize split right' })
 end
 
--- splits
-map('n', '<leader>sv', '<C-w>v') -- split window vertically
-map('n', '<leader>sh', '<C-w>s') -- split window horizontally
-map('n', '<leader>sx', ':close<CR>') -- close current split window
 --
--- vim-maximizer
-map('n', '<leader>ie', '<C-w>=', { desc = 'make split windows equal width & height' })
-map('n', '<leader>w', '<C-w>q', { desc = 'Close a Split' })
-map('n', '\\', '<cmd>vsplit<cr>', { desc = 'Vertical Split' })
-map('n', '|', '<cmd>split<cr>', { desc = 'Horizontal Split' })
-
 -- telescope (IDE Search)
 -- telescope
 map(

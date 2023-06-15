@@ -27,10 +27,10 @@ local default_config = {
     -- lsp servers that should be installed
     ensure_installed = {
       'astro',
-      --[[ 'actionlint', ]]
-      --[[ 'eslint_d', ]]
-      --[[ 'prettierd', ]]
-      --[[ 'gopls', ]]
+      'actionlint',
+      'eslint_d',
+      'prettierd',
+      'gopls',
       'bashls',
       'cssls',
       'graphql',
@@ -45,7 +45,7 @@ local default_config = {
     },
     -- lsp servers that should be enabled
     servers = {
-      --[[ gopls = true, ]]
+      gopls = true,
       astro = true,
       tailwindcss = true,
       jsonls = {
