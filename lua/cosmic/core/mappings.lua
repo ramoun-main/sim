@@ -88,12 +88,12 @@ if is_available('smart-splits.nvim') then
   map('n', '<C-h>', function()
     require('smart-splits').move_cursor_left()
   end, { desc = 'Move to Left split' })
-  --[[ map('n', '<C-j>', function() ]]
-  --[[   require('smart-splits').move_cursor_down() ]]
-  --[[ end, { desc = 'Move to below split' }) ]]
-  --[[ map('n', '<C-k>', function() ]]
-  --[[   require('smart-splits').move_cursor_up() ]]
-  --[[ end, { desc = 'Move to above split' }) ]]
+  map('n', '<C-j>', function()
+    require('smart-splits').move_cursor_down()
+  end, { desc = 'Move to below split' })
+  map('n', '<C-k>', function()
+    require('smart-splits').move_cursor_up()
+  end, { desc = 'Move to above split' })
   map('n', '<C-l>', function()
     require('smart-splits').move_cursor_right()
   end, { desc = 'Move to right split' })
@@ -245,72 +245,60 @@ end, { desc = 'Find buffers' })
 map('n', '<leader>fc', function()
   require('telescope.builtin').grep_string()
 end, { desc = 'Find for word under cursor' })
---[[ maps.n['<leader>fC'] = { ]]
---[[   function() ]]
---[[     require('telescope.builtin').commands() ]]
---[[   end, ]]
---[[   desc = 'Find commands', ]]
---[[ } ]]
+map('n', '<leader>fC', function()
+  require('telescope.builtin').commands()
+end, { desc = 'Find commands' })
 --[[ maps.n['<leader>ff'] = { ]]
 --[[   function() ]]
 --[[     require('telescope.builtin').find_files() ]]
 --[[   end, ]]
 --[[   desc = 'Find files', ]]
 --[[ } ]]
---[[ maps.n['<leader>fF'] = { ]]
---[[   function() ]]
---[[     require('telescope.builtin').find_files({ hidden = true, no_ignore = true }) ]]
---[[   end, ]]
---[[   desc = 'Find all files', ]]
---[[ } ]]
+map('n', '<leader>fF', function()
+  require('telescope.builtin').find_files({ hidden = true, no_ignore = true })
+end, { desc = 'Find all files' })
 map('n', '<leader>fH', function()
   require('telescope.builtin').help_tags()
 end, { desc = 'Find help' })
 --
---[[ map('n', '<leader>fa', function() ]]
---[[   require('telescope.builtin').keymaps() ]]
---[[ end, { desc = 'Find keymaps' }) ]]
---[[ map('n', '<leader>fm', function() ]]
---[[   require('telescope.builtin').man_pages() ]]
---[[ end, { desc = 'Find man' }) ]]
---[[ if is_available('nvim-notify') then ]]
---[[   map('n', '<leader>fn', function() ]]
---[[     require('telescope').extensions.notify.notify() ]]
---[[   end, { desc = 'Find notifications' }) ]]
---[[ end ]]
---[[ map('n', '<leader>fo', function() ]]
---[[   require('telescope.builtin').oldfiles() ]]
---[[ end, { desc = 'Find history' }) ]]
---[[ map('n', '<leader>fr', function() ]]
---[[   require('telescope.builtin').registers() ]]
---[[ end, { desc = 'Find registers' }) ]]
---[[ map('n', '<leader>ft', function() ]]
---[[   require('telescope.builtin').colorscheme({ enable_preview = true }) ]]
---[[ end, { desc = 'Find themes' }) ]]
---
+map('n', '<leader>fa', function()
+  require('telescope.builtin').keymaps()
+end, { desc = 'Find keymaps' })
+map('n', '<leader>fm', function()
+  require('telescope.builtin').man_pages()
+end, { desc = 'Find man' })
+if is_available('nvim-notify') then
+  map('n', '<leader>fn', function()
+    require('telescope').extensions.notify.notify()
+  end, { desc = 'Find notifications' })
+end
+map('n', '<leader>fo', function()
+  require('telescope.builtin').oldfiles()
+end, { desc = 'Find history' })
+map('n', '<leader>fr', function()
+  require('telescope.builtin').registers()
+end, { desc = 'Find registers' })
+map('n', '<leader>ft', function()
+  require('telescope.builtin').colorscheme({ enable_preview = true })
+end, { desc = 'Find themes' })
 --[[ maps.n["<leader>fw"] = { function() require("telescope.builtin").live_grep() end, desc = "Find words" } ]]
-
---[[ map('n', '<leader>fW', function() ]]
---[[   require('telescope.builtin').live_grep({ ]]
---[[     additional_args = function(args) ]]
---[[       return vim.list_extend(args, { '--hidden', '--no-ignore' }) ]]
---[[     end, ]]
---[[   }) ]]
---[[ end, { desc = 'Find words in all files' }) ]]
+map('n', '<leader>fW', function()
+  require('telescope.builtin').live_grep({
+    additional_args = function(args)
+      return vim.list_extend(args, { '--hidden', '--no-ignore' })
+    end,
+  })
+end, { desc = 'Find words in all files' })
 
 --[[ maps.n["<leader>l"] = sections.l ]]
---[[ maps.n["<leader>ls"] = { ]]
---[[   function() ]]
---[[     local aerial_avail, _ = pcall(require, "aerial") ]]
---[[     if aerial_avail then ]]
---[[       require("telescope").extensions.aerial.aerial() ]]
---[[     else ]]
---[[       require("telescope.builtin").lsp_document_symbols() ]]
---[[     end ]]
---[[   end, ]]
---[[   desc = "Search symbols", ]]
---[[ } ]]
--- end
+map('n', '<leader>ls', function()
+  local aerial_avail, _ = pcall(require, 'aerial')
+  if aerial_avail then
+    require('telescope').extensions.aerial.aerial()
+  else
+    require('telescope.builtin').lsp_document_symbols()
+  end
+end, { desc = 'Search symbols' })
 
 -- Improved Code Folding
 if is_available('nvim-ufo') then
@@ -354,7 +342,7 @@ map('n', 'n', 'nzzzv', {
 map('n', 'N', 'Nzzzv', {
   desc = 'repeats the search backward, centers the line containing the cursor, and adjusts the viewable area to show more lines above the cursor',
 })
-map('v', '<leader>p', [["_dP]], { desc = 'delete the selected text and paste it above the current line' })
+map('v', '<leader>P', [["_dP]], { desc = 'delete the selected text and paste it above the current line' })
 
 -- yank to system clipboard
 map({ 'n', 'v' }, '<leader>y', [["+y]], { desc = 'yank (copy) the selected text to the system clipboard register' })
@@ -371,8 +359,6 @@ map(
   { desc = 'delete the selected text in visual mode or the current line in normal mode' }
 )
 map('n', '<leader>F', vim.lsp.buf.format, { desc = 'formatting the current buffer' })
-map('n', '<C-k>', '<cmd>cnext<CR>zz', { desc = 'moves the cursor to the next location in the quickfix list' })
-map('n', '<C-j>', '<cmd>cprev<CR>zz', { desc = 'moves the cursor to the prev location in the quickfix list' })
 map('n', '<leader>k', '<cmd>lnext<CR>zz', {
   desc = 'moves the cursor to the next location in the location list and then centers the line containing the cursor in the middle of the window.',
 })
