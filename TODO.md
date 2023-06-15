@@ -17,6 +17,7 @@
 - setup nvim(vim) for react
 - setup nvim(vim) for readme
 - check other nvim/vim frameworks and tools
+- space at teh end of file
 - add terminal to nvim
 - navigate terminal with keyboard
 - vim vs emacs
