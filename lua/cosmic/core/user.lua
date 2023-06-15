@@ -27,9 +27,9 @@ local default_config = {
     -- lsp servers that should be installed
     ensure_installed = {
       'astro',
-      'actionlint',
-      'eslint_d',
-      'prettierd',
+      --[[ 'actionlint', ]]
+      --[[ 'eslint_d', ]]
+      --[[ 'prettierd', ]]
       'gopls',
       'bashls',
       'cssls',
