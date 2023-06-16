@@ -2,6 +2,9 @@
 
 ## 1. Important
 
+- delete line below(vim)
+- have a space at the end of file(vim)
+- org system in emacs
 - moving between splits
 - open in a new tab
 - the wrap problem
