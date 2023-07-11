@@ -1,8 +1,8 @@
 package.path = package.path .. ';../../../editor-name.lua'
 local editor_name = require('editor-name')
 
-local map = require(string.format('%s.utils', editor_name)).map
 local utils = require(string.format('%s.utils', editor_name))
+local map = utils.map
 local is_available = utils.is_available
 
 --[[ local maps = { i = {}, n = {}, v = {}, t = {} } ]]
