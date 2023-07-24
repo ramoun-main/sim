@@ -10,7 +10,7 @@
 
 local M = {}
 
-local env = require "cosmic.utils.status.env"
+local env = require "sim.utils.status.env"
 
 --- A condition function if the window is currently active
 ---@return boolean # whether or not the window is currently actie
@@ -135,3 +135,4 @@ function M.foldcolumn_enabled() return vim.opt.foldcolumn:get() ~= "0" end
 function M.numbercolumn_enabled() return vim.opt.number:get() or vim.opt.relativenumber:get() end
 
 return M
+

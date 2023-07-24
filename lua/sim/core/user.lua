@@ -1,5 +1,4 @@
-package.path = package.path .. ';../../../editor-name.lua'
-local editor_name = require('editor-name')
+local editor_name = 'sim'
 
 local ok, user_config = pcall(require, string.format('%s.config.config', editor_name))
 
@@ -73,3 +72,4 @@ function config.lsp.add_on_attach_mapping(callback)
 end
 
 return config
+

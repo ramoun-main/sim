@@ -1,5 +1,4 @@
-package.path = package.path .. ';../../../../editor-name.lua'
-local editor_name = require('editor-name')
+local editor_name = 'sim'
 
 local map = require(string.format('%s.utils', editor_name)).map
 
@@ -9,3 +8,4 @@ map('t', '<C-l>', [[<C-\><C-n>]], { desc = 'Close Floaterm' })
 -- map('t', '<C-w>h', [[<C-\><C-n>:FloatermPrev<CR>]], { desc = 'Prev terminal' })
 -- map('t', '<C-w>n', [[<C-\><C-n>:FloatermNew<CR>]], { desc = 'New terminal' })
 -- map('t', '<C-w>c', [[<C-\><C-n>:FloatermKill<CR>]], { desc = 'Kill current terminal' })
+

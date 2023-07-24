@@ -10,9 +10,9 @@
 
 local M = {}
 
-local env = require "cosmic.utils.status.env"
+local env = require "sim.utils.status.env"
 
-local utils = require "cosmic.utils"
+local utils = require "sim.utils"
 local extend_tbl = utils.extend_tbl
 local get_icon = utils.get_icon
 
@@ -200,3 +200,4 @@ function M.statuscolumn_clickargs(self, minwid, clicks, button, mods)
 end
 
 return M
+

@@ -1,5 +1,4 @@
-package.path = package.path .. ';../../../../editor-name.lua'
-local editor_name = require('editor-name')
+local editor_name = 'sim'
 
 local user_config = require(string.format('%s.core.user', editor_name))
 local icons = require(string.format('%s.utils.icons', editor_name))
@@ -52,3 +51,4 @@ return {
   event = 'VimEnter',
   enabled = not vim.tbl_contains(user_config.disable_builtin_plugins, 'dashboard'),
 }
+

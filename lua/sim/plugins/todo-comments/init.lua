@@ -1,5 +1,4 @@
-package.path = package.path .. ';../../../../editor_nametor-name.lua'
-local editor_name = require('editor-name')
+local editor_name = 'sim'
 
 local user_config = require(string.format('%s.core.user', editor_name))
 local icons = require(string.format('%s.utils.icons', editor_name))
@@ -35,3 +34,4 @@ return {
   event = 'VeryLazy',
   enabled = not vim.tbl_contains(user_config.disable_builtin_plugins, 'todo-comments'),
 }
+

@@ -10,15 +10,15 @@
 
 local M = {}
 
-local condition = require "cosmic.utils.status.condition"
-local env = require "cosmic.utils.status.env"
-local hl = require "cosmic.utils.status.hl"
-local init = require "cosmic.utils.status.init"
-local provider = require "cosmic.utils.status.provider"
-local status_utils = require "cosmic.utils.status.utils"
+local condition = require "sim.utils.status.condition"
+local env = require "sim.utils.status.env"
+local hl = require "sim.utils.status.hl"
+local init = require "sim.utils.status.init"
+local provider = require "sim.utils.status.provider"
+local status_utils = require "sim.utils.status.utils"
 
-local utils = require "cosmic.utils"
-local buffer_utils = require "cosmic.utils.buffer"
+local utils = require "sim.utils"
+local buffer_utils = require "sim.utils.buffer"
 local extend_tbl = utils.extend_tbl
 local get_icon = utils.get_icon
 local is_available = utils.is_available
@@ -433,3 +433,4 @@ function M.builder(opts)
 end
 
 return M
+

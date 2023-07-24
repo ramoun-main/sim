@@ -1,4 +1,4 @@
-<h1 align="center">💫 CosmicNvim</h1>
+<h1 align="center">💫 VIM</h1>
 
 <p align="center">
   <img alt="Neovim Minimum Version" src="https://img.shields.io/badge/Neovim-0.8.0+-blueviolet.svg?style=flat-square&logo=Neovim&logoColor=white)](https://github.com/neovim/neovim">
@@ -121,3 +121,4 @@ Updates CosmicNvim to the latest version
 ## 📷 Screenshots
 
 [See more](https://github.com/CosmicNvim/CosmicNvim/wiki/Screenshots)
+

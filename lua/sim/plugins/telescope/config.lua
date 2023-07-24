@@ -1,5 +1,4 @@
-package.path = package.path .. ';../../../../editor-name.lua'
-local editor_name = require('editor-name')
+local editor_name = 'sim'
 
 local actions = require('telescope.actions')
 local user_config = require(string.format('%s.core.user', editor_name))
@@ -138,3 +137,4 @@ require('telescope').setup(u.merge({
 }, user_config.plugins.telescope or {}))
 
 require('telescope').load_extension('fzf')
+

@@ -1,42 +1,9 @@
-local cmd = vim.cmd
 local opt = vim.opt
 local g = vim.g
 
-cmd([[
-  set noendofline
-  set nofixendofline
-]])
+g.mapleader = ' '
 
 local indent = 2
-
--- dynamic detection based on file extension and file contents
-cmd([[
-	filetype plugin indent on
-]])
-
--- remove lines at the end of a buffer
-local augroup_name = 'SimEditorClean'
-local group = vim.api.nvim_create_augroup(augroup_name, { clear = true })
-vim.api.nvim_create_autocmd('BufWritePre', {
-  command = [[%s/\s\+$//e]],
-  group = group,
-})
-
--- add new empty line at end of file on save
--- Add new line to the end of the file
-vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
-  group = vim.api.nvim_create_augroup('UserOnSave', {}),
-  pattern = '*',
-  callback = function()
-    local n_lines = vim.api.nvim_buf_line_count(0)
-    local last_nonblank = vim.fn.prevnonblank(n_lines)
-    if last_nonblank <= n_lines then
-      vim.api.nvim_buf_set_lines(0, last_nonblank, n_lines, true, { '' })
-    end
-  end,
-})
-
-g.mapleader = ' '
 
 local options = {
 
@@ -70,7 +37,7 @@ local options = {
   --[[lazyredraw = true ]]
   list = true, -- display special characters on the screen
   listchars = {
-    tab = '❘-',
+    tab = '|-',
     trail = '·',
     lead = '·',
     extends = '»',
@@ -86,7 +53,7 @@ local options = {
   signcolumn = 'yes', -- always show the sign column, otherwise it would shift the text each time, also used by other plugins like git signs to show edited lines and so on.
   splitbelow = true, -- force all horizontal splits to go below current window
   splitright = true, -- force all vertical splits to go to the right of current window
-  wrap = true, -- display lines as one long line
+  wrap = true, -- don't display lines as one long line
 
   -- backups -- TODO: we need to bring these back or find another backup mechanism to neovim
   backup = false,
@@ -116,16 +83,10 @@ local options = {
   showtabline = 2, -- always show tabs
   undofile = true, -- enable persistent undo
 
-  numberwidth = 4, -- set number column width to 2 {default 4}
+  numberwidth = 5, -- set number column width to 2 {default 4}
   guifont = 'JetBrains Mono:h17', -- the font used in graphical neovim applications
 }
 
 for k, v in pairs(options) do
   opt[k] = v
 end
-
-vim.cmd('set whichwrap+=<,>,[,],h,l')
-vim.cmd([[set iskeyword+=-]])
-vim.cmd([[set formatoptions-=cro]]) -- TODO: this doesn't seem to work
-
--- See :h vim.keymap for more info

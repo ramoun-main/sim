@@ -4,8 +4,7 @@
 --
 -- This module can also loaded with `local updater = require(string.format("%s.utils.updater", editor_name)`
 --
-package.path = package.path .. '../../../editor-name.lua'
-local editor_name = require('editor-name')
+local editor_name = 'sim'
 -- @module string.format(%s.utils.updater, editor_name)
 -- @see string.format("%s.utils", editor_name)
 -- @copyright 2023
@@ -360,3 +359,4 @@ function M.update(opts)
 end
 
 return M
+

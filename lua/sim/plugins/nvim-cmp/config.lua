@@ -1,5 +1,4 @@
-package.path = package.path .. ';../../../../editor-name.lua'
-local editor_name = require('editor-name')
+local editor_name = 'sim'
 
 local cmp = require('cmp')
 local u = require(string.format('%s.utils', editor_name))
@@ -141,3 +140,4 @@ cmp.setup.cmdline(':', {
     { name = 'cmdline' },
   }),
 })
+

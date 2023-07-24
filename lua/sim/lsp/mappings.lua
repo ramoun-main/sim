@@ -1,5 +1,4 @@
-package.path = package.path .. ';../../../editor-name.lua'
-local editor_name = require('editor-name')
+local editor_name = 'sim'
 
 local utils = require(string.format('%s.utils', editor_name))
 local lsp_utils = require(string.format('%s.utils.lsp', editor_name))
@@ -62,3 +61,4 @@ function M.init(client, bufnr)
 end
 
 return M
+

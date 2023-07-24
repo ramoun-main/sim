@@ -10,11 +10,11 @@
 
 local M = {}
 
-local env = require "cosmic.utils.status.env"
-local provider = require "cosmic.utils.status.provider"
-local status_utils = require "cosmic.utils.status.utils"
+local env = require "sim.utils.status.env"
+local provider = require "sim.utils.status.provider"
+local status_utils = require "sim.utils.status.utils"
 
-local utils = require "cosmic.utils"
+local utils = require "sim.utils"
 local extend_tbl = utils.extend_tbl
 
 --- An `init` function to build a set of children components for LSP breadcrumbs
@@ -153,3 +153,4 @@ function M.update_events(opts)
 end
 
 return M
+

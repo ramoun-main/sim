@@ -10,11 +10,11 @@
 
 local M = {}
 
-local condition = require "cosmic.utils.status.condition"
-local env = require "cosmic.utils.status.env"
-local status_utils = require "cosmic.utils.status.utils"
+local condition = require "sim.utils.status.condition"
+local env = require "sim.utils.status.env"
+local status_utils = require "sim.utils.status.utils"
 
-local utils = require "cosmic.utils"
+local utils = require "sim.utils"
 local extend_tbl = utils.extend_tbl
 local get_icon = utils.get_icon
 
@@ -528,3 +528,4 @@ function M.str(opts)
 end
 
 return M
+

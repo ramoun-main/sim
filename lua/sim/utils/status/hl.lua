@@ -10,7 +10,7 @@
 
 local M = {}
 
-local env = require "cosmic.utils.status.env"
+local env = require "sim.utils.status.env"
 
 --- Get the highlight background color of the lualine theme for the current colorscheme
 ---@param mode string the neovim mode to get the color of
@@ -74,3 +74,4 @@ function M.file_icon(name)
 end
 
 return M
+

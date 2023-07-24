@@ -1,5 +1,4 @@
-package.path = package.path .. ';../../../../editor-name.lua'
-local editor_name = require('editor-name')
+local editor_name = 'sim'
 
 local user_config = require(string.format('%s.core.user', editor_name))
 local u = require(string.format('%s.utils', editor_name))
@@ -9,6 +8,7 @@ local defaults = {
   auto_session_enabled = true,
   auto_restore_enabled = true,
   auto_save_enabled = true,
+  log_level = 'error',
 }
 
 return {

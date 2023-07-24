@@ -10,12 +10,12 @@
 
 local M = {}
 
-local hl = require "cosmic.utils.status.hl"
-local provider = require "cosmic.utils.status.provider"
-local status_utils = require "cosmic.utils.status.utils"
+local hl = require "sim.utils.status.hl"
+local provider = require "sim.utils.status.provider"
+local status_utils = require "sim.utils.status.utils"
 
-local utils = require "cosmic.utils"
-local buffer_utils = require "cosmic.utils.buffer"
+local utils = require "sim.utils"
+local buffer_utils = require "sim.utils.buffer"
 local get_icon = utils.get_icon
 
 --- A helper function to get the type a tab or buffer is
@@ -113,3 +113,4 @@ function M.buffer_picker(callback)
 end
 
 return M
+

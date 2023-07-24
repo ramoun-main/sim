@@ -1,5 +1,4 @@
-package.path = package.path .. ';../../../../editor-name.lua'
-local editor_name = require('editor-name')
+local editor_name = 'sim'
 
 return {
   'williamboman/mason-lspconfig.nvim',
@@ -59,3 +58,4 @@ return {
   },
   event = 'BufEnter',
 }
+

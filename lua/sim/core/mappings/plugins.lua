@@ -1,105 +1,35 @@
-package.path = package.path .. ';../../../editor-name.lua'
-local editor_name = require('editor-name')
-
+local editor_name = 'sim'
 local utils = require(string.format('%s.utils', editor_name))
 local map = utils.map
 local is_available = utils.is_available
 
---[[ local maps = { i = {}, n = {}, v = {}, t = {} } ]]
-
--- Quickfix mappings
-map('n', '<leader>ck', ':cexpr []<cr>', { desc = 'Clear list' })
-map('n', '<leader>cc', ':cclose <cr>', { desc = 'Close list' })
-map('n', '<leader>co', ':copen <cr>', { desc = 'Open list' })
-map('n', '<leader>cf', ':cfdo %s/', { desc = 'Search & Replace' })
-map('n', '<leader>cp', ':cprev<cr>zz', { desc = 'Prev Item' })
-map('n', '<leader>cn', ':cnext<cr>zz', { desc = 'Next Item' })
-
--- buffer navigation
-map('n', '<leader>bp', ':bprev<cr>', { desc = 'Prev buffer' })
-map('n', '<leader>bn', ':bnext<cr>', { desc = 'Next buffer' })
-map('n', '<leader>bd', ':bdelete<cr>', { desc = 'Delete buffer' })
-
--- plugin management
-map('n', '<leader>pc', ':Lazy check<cr>', { desc = 'Check plugins' })
-map('n', '<leader>pu', ':Lazy update<cr>', { desc = 'Update plugins' })
-map('n', '<leader>ps', ':Lazy show<cr>', { desc = 'Show plugins' })
+-- plugin management (Lazy)
+map('n', '<leader>pc', ':Lazy check<cr>', { desc = 'Check Plugins' })
+map('n', '<leader>pu', ':Lazy update<cr>', { desc = 'Update Plugins' })
+map('n', '<leader>ps', ':Lazy show<cr>', { desc = 'Show Plugins' })
 map('n', '<leader>ph', ':Lazy help<cr>', { desc = 'Help' })
 map('n', '<leader>pp', ':Lazy profile<cr>', { desc = 'Profile' })
 map('n', '<leader>pl', ':Lazy logs<cr>', { desc = 'Logs' })
-map('n', '<leader>px', ':Lazy clear<cr>', { desc = 'Clear uninstalled plugins' })
-map('n', '<leader>pr', ':Lazy restore<cr>', { desc = 'Restore plugins from lockfile' })
+map('n', '<leader>px', ':Lazy clear<cr>', { desc = 'Clear Uninstalled Plugins' })
+map('n', '<leader>pr', ':Lazy restore<cr>', { desc = 'Restore Plugins From Lockfile' })
 if is_available('mason.nvim') then
   map('n', '<leader>pm', '<cmd>Mason<cr>', { desc = 'Mason Installer' })
   map('n', '<leader>pM', '<cmd>MasonUpdateAll<cr>', { desc = 'Mason Update' })
 end
 
--- resize with arrows
-map('n', '<C-Up>', ':resize -2<CR>', { desc = 'Resize -2' })
-map('n', '<C-Down>', ':resize +2<CR>', { desc = 'Resize +2' })
-map('n', '<C-Left>', ':vertical resize -2<CR>', { desc = 'Vertical Resize -2' })
-map('n', '<C-Right>', ':vertical resize +2<CR>', { desc = 'Vertical Resize +2' })
-
----------------------------------- my custom remaps (entrirely) ----------------------------------
-
--- use jj/jk to exit insert mode
-map('i', 'jj', '<ESC>')
-map('i', 'jk', '<ESC>')
-
--- switch gM and gm
-map('n', 'gM', 'gm')
-map('n', 'gm', 'gM')
-
--- clear search highlights
-map('n', '<leader>nh', ':nohl<CR>')
-
--- delete single character without copying into register
-map('n', 'x', '"_x')
-
--- increment/decrement numbers (e.g: -13)
-map('n', '<leader>+', '<C-a>') -- increment
-map('n', '<leader>-', '<C-x>') -- decrement
-
--- tab management
-map('n', '<leader>to', ':tabnew<CR>', { desc = 'open new tab' })
-map('n', '<leader>tx', ':tabclose<CR>', { desc = 'close currentab' })
-
--- tab navigation
-map('n', '<leader>tp', ':tabprevious<cr>', { desc = 'Prev tab' })
---[[ map('n', '<leader>tp', ':tabp<CR>', { desc = 'go to previous tab' }) ]]
-map('n', 'H', ':tabp<CR>', { desc = 'go to previous tab' })
-map('n', '<leader>tn', ':tabnext<cr>', { desc = 'Next tab' })
---[[ map('n', '<leader>tn', ':tabn<CR>', { desc = 'go to next tab tab' }) ]]
-map('n', 'L', ':tabn<CR>', { desc = 'go to next tab tab' })
-map('n', '<leader>td', ':tabclose<cr>', { desc = 'Close tab' })
-
--- sidebar
-
-map('n', '<leader>e', ':NvimTreeToggle<CR>') -- toggle file explorer
-
--- splits
-map('n', '<leader>sv', '<C-w>v') -- split window vertically
-map('n', '<leader>sh', '<C-w>s') -- split window horizontally
-map('n', '<leader>sx', ':close<CR>') -- close current split window
--- vim-maximizer
-map('n', '<leader>ie', '<C-w>=', { desc = 'make split windows equal width & height' })
-map('n', '<leader>w', '<C-w>q', { desc = 'Close a Split' })
-map('n', '\\', '<cmd>vsplit<cr>', { desc = 'Vertical Split' })
-map('n', '|', '<cmd>split<cr>', { desc = 'Horizontal Split' })
-
 if is_available('smart-splits.nvim') then
-  map('n', '<C-h>', function()
-    require('smart-splits').move_cursor_left()
-  end, { desc = 'Move to Left split' })
-  map('n', '<C-j>', function()
-    require('smart-splits').move_cursor_down()
-  end, { desc = 'Move to below split' })
-  map('n', '<C-k>', function()
-    require('smart-splits').move_cursor_up()
-  end, { desc = 'Move to above split' })
-  map('n', '<C-l>', function()
-    require('smart-splits').move_cursor_right()
-  end, { desc = 'Move to right split' })
+  --[[ map('n', '<C-h>', function() ]]
+  --[[   require('smart-splits').move_cursor_left() ]]
+  --[[ end, { desc = 'Move to Left split' }) ]]
+  --[[ map('n', '<C-j>', function() ]]
+  --[[   require('smart-splits').move_cursor_down() ]]
+  --[[ end, { desc = 'Move to below split' }) ]]
+  --[[ map('n', '<C-k>', function() ]]
+  --[[   require('smart-splits').move_cursor_up() ]]
+  --[[ end, { desc = 'Move to above split' }) ]]
+  --[[ map('n', '<C-l>', function() ]]
+  --[[   require('smart-splits').move_cursor_right() ]]
+  --[[ end, { desc = 'Move to right split' }) ]]
   map('n', '<C-Up>', function()
     require('smart-splits').resize_up()
   end, { desc = 'Resize split up' })
@@ -122,6 +52,9 @@ else
   map('n', '<C-Left>', '<cmd>vertical resize -2<CR>', { desc = 'Resize split left' })
   map('n', '<C-Right>', '<cmd>vertical resize +2<CR>', { desc = 'Resize split right' })
 end
+
+-- sidebar
+map('n', '<leader>e', ':NvimTreeToggle<CR>') -- toggle file explorer
 
 --
 -- telescope (IDE Search)
@@ -323,56 +256,8 @@ if is_available('nvim-ufo') then
   end, { desc = 'Peek fold' })
 end
 
--- Stay in indent mode
-map('v', '<S-Tab>', '<gv', { desc = 'Unindent line' })
-map('v', '<Tab>', '>gv', { desc = 'Indent line' })
-
 -- restart lsp server (not on youtube nvim video)
 map('n', '<leader>rs', ':LspRestart<CR>', { desc = 'mapping to restart lsp if necessary' })
-
--- line manip.
-map('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'move a block of text down by one line.' })
-map('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'move a block of text up by two lines' })
-map('n', 'J', 'mzJ`z', { desc = 'join current line and line below it' })
-map('n', '<C-d>', '<C-d>zz', {
-  desc = 'scrolls the window down by half of its height and then centers the line containing the cursor in the middle of the window',
-})
-map('n', '<C-u>', '<C-u>zz', {
-  desc = 'scrolls the window up by half of its height and then centers the line containing the cursor in the middle of the window.',
-})
-map('n', 'n', 'nzzzv', {
-  desc = 'repeats the search forward, centers the line containing the cursor, and adjusts the viewable area to show more lines above the cursor',
-})
-map('n', 'N', 'Nzzzv', {
-  desc = 'repeats the search backward, centers the line containing the cursor, and adjusts the viewable area to show more lines above the cursor',
-})
-map('v', '<leader>P', [["_dP]], { desc = 'delete the selected text and paste it above the current line' })
-
--- yank to system clipboard
-map({ 'n', 'v' }, '<leader>y', [["+y]], { desc = 'yank (copy) the selected text to the system clipboard register' })
-map(
-  { 'n', 'v' },
-  '<leader>Y',
-  [["+Y]],
-  { desc = 'yank (copy) the current line, including the newline character, to the system clipboard register' }
-)
-map(
-  { 'n', 'v' },
-  '<leader>d',
-  [["_d]],
-  { desc = 'delete the selected text in visual mode or the current line in normal mode' }
-)
-map('n', '<leader>F', vim.lsp.buf.format, { desc = 'formatting the current buffer' })
-map('n', '<leader>k', '<cmd>lnext<CR>zz', {
-  desc = 'moves the cursor to the next location in the location list and then centers the line containing the cursor in the middle of the window.',
-})
-map('n', '<leader>j', '<cmd>lprev<CR>zz', {
-  desc = 'moves the cursor to the prev location in the location list and then centers the line containing the cursor in the middle of the window.',
-})
-map('n', '<leader>fS', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {
-  desc = 'performs a case-insensitive search and replace operation in the entire file. The word under the cursor is used as the replacement for each occurrence of the matched word',
-})
-map('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true, desc = 'makes the current file executable' })
 
 -- Comment : --TODO: is it Comment or Comments
 if is_available('Comment.nvim') then
@@ -386,18 +271,3 @@ if is_available('Comment.nvim') then
     { desc = 'Toggle comment for selection' }
   )
 end
-
---
--- FILE
-map('n', '<leader>ss', '<cmd>w<cr>', { desc = 'Save' })
-map('n', '<leader>q', '<cmd>confirm q<cr>', { desc = 'Quit' })
-map('n', '<leader>n', '<cmd>enew<cr>', { desc = 'New File' })
-map('n', '<C-s>', '<cmd>w!<cr>', { desc = 'Force write' })
-map('n', '<C-q>', 'cmd>q!<cr>', { desc = 'Force quit' })
-
--- NOP!!!
---
--- vim.keymap.set("n", "Q", "<nop>", {desc='"no operation." It essentially disables the mapping and makes the key sequence do nothing'})
--- vim.keymap.set("n", "<Left>", "<nop>")
--- vim.keymap.set("n", "<Right>", "<nop>")
--- vim.keymap.set("n", "<Up>", "<nop>")

@@ -1,5 +1,4 @@
-package.path = package.path .. ';../../../editor-name.lua'
-local editor_name = require('editor-name')
+local editor_name = 'sim'
 
 local Logger = {}
 Logger.__index = Logger
@@ -46,3 +45,4 @@ function Logger:error(msg, opts)
 end
 
 return Logger
+
