@@ -38,7 +38,7 @@ return {
   config = function()
     require('lualine').setup(utils.merge({
       options = {
-        theme = 'tokyonight',
+        theme = 'material-deep-ocean',
         component_separators = '|',
         section_separators = { left = '', right = '' },
       },

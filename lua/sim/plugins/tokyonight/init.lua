@@ -1,6 +1,7 @@
 local editor_name = 'sim'
 
 local user_config = require(string.format('%s.core.user', editor_name))
+
 return {
   { -- color scheme
     'folke/tokyonight.nvim',
@@ -13,4 +14,3 @@ return {
     enabled = not vim.tbl_contains(user_config.disable_builtin_plugins, 'tokyonight'),
   },
 }
-

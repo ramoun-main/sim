@@ -122,3 +122,5 @@ Updates CosmicNvim to the latest version
 
 [See more](https://github.com/CosmicNvim/CosmicNvim/wiki/Screenshots)
 
+hello = hi
+

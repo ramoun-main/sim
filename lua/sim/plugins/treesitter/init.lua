@@ -41,6 +41,7 @@ local defaults = {
     highlight_definitions = { enable = true },
     highlight_current_scope = { enable = false },
   },
+  endwise = { enable = true },
 }
 
 return {
@@ -49,6 +50,7 @@ return {
     'windwp/nvim-ts-autotag',
     'JoosepAlviste/nvim-ts-context-commentstring',
     'nvim-treesitter/nvim-treesitter-refactor',
+    'RRethy/nvim-treesitter-endwise',
   },
   event = 'BufEnter',
   build = ':TSUpdate',
@@ -57,4 +59,3 @@ return {
   end,
   enabled = not vim.tbl_contains(user_config.disable_builtin_plugins, 'treesitter'),
 }
-
