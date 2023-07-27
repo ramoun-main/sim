@@ -39,8 +39,6 @@ return {
     require('lualine').setup(utils.merge({
       options = {
         theme = 'tokyonight',
-        component_separators = '|',
-        section_separators = { left = '', right = '' },
       },
       sections = {
         lualine_a = { 'mode' },
@@ -56,13 +54,15 @@ return {
           },
           custom_sections.shortenedFilePath,
         },
-        lualine_c = { custom_sections.diff },
+        lualine_c = {
+          custom_sections.diff,
+        },
         lualine_x = { 'diagnostics' },
         lualine_y = { lsp_utils.get_lsp_status_str },
         lualine_z = { 'location', 'progress' },
       },
       inactive_sections = {
-        lualine_a = { 'mode' },
+        lualine_a = {},
         lualine_b = {
           {
             'filetype',
@@ -78,7 +78,7 @@ return {
         lualine_c = { custom_sections.diff },
         lualine_x = { 'diagnostics' },
         lualine_y = { 'location', 'progress' },
-        lualine_z = { 'location', separator = { right = '' }, left_padding = 2 },
+        lualine_z = {},
       },
       winbar = {
         lualine_a = { utils.get_short_cwd },

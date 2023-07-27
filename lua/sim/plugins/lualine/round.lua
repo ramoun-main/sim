@@ -38,12 +38,14 @@ return {
   config = function()
     require('lualine').setup(utils.merge({
       options = {
-        theme = 'tokyonight',
+        theme = 'ayu_dark',
         component_separators = '|',
         section_separators = { left = '', right = '' },
       },
       sections = {
-        lualine_a = { 'mode' },
+        lualine_a = {
+          { 'mode', separator = { left = '' }, right_padding = 2 },
+        },
         lualine_b = {
           {
             'filetype',
@@ -56,13 +58,16 @@ return {
           },
           custom_sections.shortenedFilePath,
         },
-        lualine_c = { custom_sections.diff },
+        lualine_c = {
+          custom_sections.diff,
+        },
         lualine_x = { 'diagnostics' },
         lualine_y = { lsp_utils.get_lsp_status_str },
-        lualine_z = { 'location', 'progress' },
+    lualine_z = {
+      { 'location', separator = { right = '' }, left_padding = 2 },
       },
       inactive_sections = {
-        lualine_a = { 'mode' },
+        lualine_a = {},
         lualine_b = {
           {
             'filetype',
@@ -78,7 +83,7 @@ return {
         lualine_c = { custom_sections.diff },
         lualine_x = { 'diagnostics' },
         lualine_y = { 'location', 'progress' },
-        lualine_z = { 'location', separator = { right = '' }, left_padding = 2 },
+        lualine_z = {},
       },
       winbar = {
         lualine_a = { utils.get_short_cwd },
@@ -137,3 +142,4 @@ return {
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   enabled = not vim.tbl_contains(user_config.disable_builtin_plugins, 'lualine'),
 }
+
