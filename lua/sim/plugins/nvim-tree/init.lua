@@ -16,11 +16,14 @@ local args = {
       error = icons.error,
     },
   },
-  ignore_ft_on_setup = {
-    'startify',
-    'dashboard',
-    'alpha',
-  },
+  --[[ filters = { ]]
+  --[[   git = true, ]]
+  --[[ }, ]]
+  --[[ ignore_ft_on_setup = { ]]
+  --[[   'startify', ]]
+  --[[   'dashboard', ]]
+  --[[   'alpha', ]]
+  --[[ }, ]]
   update_focused_file = {
     enable = true,
   },
@@ -54,9 +57,9 @@ return {
   init = function()
     local map = require(string.format('%s.utils', editor_name)).map
 
-    map('n', '<C-n>', ':NvimTreeToggle<CR>', { desc = 'Toggle Tree' })
-    map('n', '<leader>nt', ':NvimTreeToggle<CR>', { desc = 'Toggle Tree' })
+    map('n', '<leader>e', ':NvimTreeToggle<CR>', { desc = 'Toggle Tree' })
     map('n', '<leader>nr', ':NvimTreeRefresh<CR>', { desc = 'Refresh Tree' })
+    map('n', '<leader>nc', ':NvimTreeCollapse<CR>', { desc = 'Collapse Tree' })
   end,
   cmd = {
     'NvimTreeClipboard',
@@ -64,6 +67,7 @@ return {
     'NvimTreeOpen',
     'NvimTreeRefresh',
     'NvimTreeToggle',
+    'NvimTreeCollapse',
   },
   enabled = not vim.tbl_contains(user_config.disable_builtin_plugins, 'nvim-tree'),
 }

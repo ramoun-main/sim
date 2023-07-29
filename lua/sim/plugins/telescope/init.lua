@@ -6,6 +6,9 @@ return {
   dependencies = {
     'nvim-lua/popup.nvim',
     'nvim-lua/plenary.nvim',
+    -- this is required for ripgrep to work
+    -- TODO: currently we use sudo apt install ripgrep to make it work but i am sure there is a thing that can make install automatically on any system
+    'BurntSushi/ripgrep',
     {
       'nvim-telescope/telescope-fzf-native.nvim',
       build = 'make',
@@ -54,4 +57,3 @@ return {
   },
   enabled = not vim.tbl_contains(user_config.disable_builtin_plugins, 'telescope'),
 }
-

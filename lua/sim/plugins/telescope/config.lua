@@ -55,6 +55,7 @@ require('telescope').setup(u.merge({
     selection_caret = icons.folder.arrow_closed,
     file_ignore_patterns = {
       '.git/',
+      'node_modules/',
     },
     dynamic_preview_title = true,
     vimgrep_arguments = {
@@ -137,4 +138,3 @@ require('telescope').setup(u.merge({
 }, user_config.plugins.telescope or {}))
 
 require('telescope').load_extension('fzf')
-

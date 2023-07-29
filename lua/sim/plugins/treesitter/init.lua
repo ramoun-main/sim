@@ -42,6 +42,7 @@ local defaults = {
     highlight_current_scope = { enable = false },
   },
   endwise = { enable = true },
+  rainbow = { enable = true },
 }
 
 return {
@@ -51,6 +52,7 @@ return {
     'JoosepAlviste/nvim-ts-context-commentstring',
     'nvim-treesitter/nvim-treesitter-refactor',
     'RRethy/nvim-treesitter-endwise',
+    'p00f/nvim-ts-rainbow',
   },
   event = 'BufEnter',
   build = ':TSUpdate',

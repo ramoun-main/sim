@@ -63,8 +63,7 @@ return {
         },
         lualine_x = { 'diagnostics' },
         lualine_y = { lsp_utils.get_lsp_status_str },
-    lualine_z = {
-      { 'location', separator = { right = '' }, left_padding = 2 },
+        lualine_z = { { 'location', separator = { right = '' }, left_padding = 2 } },
       },
       inactive_sections = {
         lualine_a = {},
@@ -142,4 +141,3 @@ return {
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   enabled = not vim.tbl_contains(user_config.disable_builtin_plugins, 'lualine'),
 }
-

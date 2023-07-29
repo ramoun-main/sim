@@ -11,6 +11,7 @@ return {
   'CosmicNvim/cosmic-ui',
   dependencies = {
     'MunifTanjim/nui.nvim',
+    'nvim-lua/plenary.nvim',
   },
   init = function()
     user_config.lsp.add_on_attach_mapping(function(client, bufnr)
@@ -32,4 +33,3 @@ return {
   event = 'VeryLazy',
   enabled = not vim.tbl_contains(user_config.disable_builtin_plugins, 'cosmic-ui'),
 }
-

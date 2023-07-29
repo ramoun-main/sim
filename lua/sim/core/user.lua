@@ -9,14 +9,16 @@ end
 local default_config = {
   border = 'rounded',
   disable_builtin_plugins = {},
-  add_plugins = {},
+  add_plugins = {
+    'fladson/vim-kitty',
+  },
   plugins = {
     lsp_lines = {
       -- additional flag only for CosmicNvim
       -- true - loads plugin and is enabled at start
       -- false - loads plugin but is not enabled at start
       -- you may use <leader>ld to toggle
-      enable_on_start = false,
+      enable_on_start = true,
     },
   },
   lsp = {
@@ -57,8 +59,9 @@ local default_config = {
         format = false,
       },
       html = true,
+      css = true,
       tsserver = {
-        format = false,
+        format = true,
       },
     },
   },
@@ -72,4 +75,3 @@ function config.lsp.add_on_attach_mapping(callback)
 end
 
 return config
-

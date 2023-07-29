@@ -80,4 +80,3 @@ return {
   event = 'VeryLazy',
   enabled = not vim.tbl_contains(user_config.disable_builtin_plugins, 'which-key'),
 }
-

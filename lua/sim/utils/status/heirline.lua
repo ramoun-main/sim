@@ -10,12 +10,12 @@
 
 local M = {}
 
-local hl = require "sim.utils.status.hl"
-local provider = require "sim.utils.status.provider"
-local status_utils = require "sim.utils.status.utils"
+local hl = require('sim.utils.status.hl')
+local provider = require('sim.utils.status.provider')
+local status_utils = require('sim.utils.status.utils')
 
-local utils = require "sim.utils"
-local buffer_utils = require "sim.utils.buffer"
+local utils = require('sim.utils')
+local buffer_utils = require('sim.utils.buffer')
 local get_icon = utils.get_icon
 
 --- A helper function to get the type a tab or buffer is
@@ -23,47 +23,57 @@ local get_icon = utils.get_icon
 ---@param prefix? string the prefix of the type, either "tab" or "buffer" (Default: "buffer")
 ---@return string # the string of prefix with the type (i.e. "_active" or "_visible")
 function M.tab_type(self, prefix)
-  local tab_type = ""
+  local tab_type = ''
   if self.is_active then
-    tab_type = "_active"
+    tab_type = '_active'
   elseif self.is_visible then
-    tab_type = "_visible"
+    tab_type = '_visible'
   end
-  return (prefix or "buffer") .. tab_type
+  return (prefix or 'buffer') .. tab_type
 end
 
 --- Make a list of buffers, rendering each buffer with the provided component
 ---@param component table
 ---@return table
 M.make_buflist = function(component)
-  local overflow_hl = hl.get_attributes("buffer_overflow", true)
-  return require("heirline.utils").make_buflist(
+  local overflow_hl = hl.get_attributes('buffer_overflow', true)
+  return require('heirline.utils').make_buflist(
     status_utils.surround(
-      "tab",
+      'tab',
       function(self)
         return {
-          main = M.tab_type(self) .. "_bg",
-          left = "tabline_bg",
-          right = "tabline_bg",
+          main = M.tab_type(self) .. '_bg',
+          left = 'tabline_bg',
+          right = 'tabline_bg',
         }
       end,
       { -- bufferlist
-        init = function(self) self.tab_type = M.tab_type(self) end,
+        init = function(self)
+          self.tab_type = M.tab_type(self)
+        end,
         on_click = { -- add clickable component to each buffer
-          callback = function(_, minwid) vim.api.nvim_win_set_buf(0, minwid) end,
-          minwid = function(self) return self.bufnr end,
-          name = "heirline_tabline_buffer_callback",
+          callback = function(_, minwid)
+            vim.api.nvim_win_set_buf(0, minwid)
+          end,
+          minwid = function(self)
+            return self.bufnr
+          end,
+          name = 'heirline_tabline_buffer_callback',
         },
         { -- add buffer picker functionality to each buffer
-          condition = function(self) return self._show_picker end,
+          condition = function(self)
+            return self._show_picker
+          end,
           update = false,
           init = function(self)
             if not (self.label and self._picker_labels[self.label]) then
               local bufname = provider.filename()(self)
               local label = bufname:sub(1, 1)
               local i = 2
-              while label ~= " " and self._picker_labels[label] do
-                if i > #bufname then break end
+              while label ~= ' ' and self._picker_labels[label] do
+                if i > #bufname then
+                  break
+                end
                 label = bufname:sub(i, i)
                 i = i + 1
               end
@@ -71,30 +81,40 @@ M.make_buflist = function(component)
               self.label = label
             end
           end,
-          provider = function(self) return provider.str { str = self.label, padding = { left = 1, right = 1 } } end,
-          hl = hl.get_attributes "buffer_picker",
+          provider = function(self)
+            return provider.str({ str = self.label, padding = { left = 1, right = 1 } })
+          end,
+          hl = hl.get_attributes('buffer_picker'),
         },
         component, -- create buffer component
       },
-      function(self) return buffer_utils.is_valid(self.bufnr) end -- disable surrounding
+      function(self)
+        return buffer_utils.is_valid(self.bufnr)
+      end -- disable surrounding
     ),
-    { provider = get_icon "ArrowLeft" .. " ", hl = overflow_hl },
-    { provider = get_icon "ArrowRight" .. " ", hl = overflow_hl },
-    function() return vim.t.bufs end, -- use cosmic bufs variable
+    { provider = get_icon('ArrowLeft') .. ' ', hl = overflow_hl },
+    { provider = get_icon('ArrowRight') .. ' ', hl = overflow_hl },
+    function()
+      return vim.t.bufs
+    end, -- use cosmic bufs variable
     false -- disable internal caching
   )
 end
 
 --- Alias to require("heirline.utils").make_tablist
-function M.make_tablist(...) return require("heirline.utils").make_tablist(...) end
+function M.make_tablist(...)
+  return require('heirline.utils').make_tablist(...)
+end
 
 --- Run the buffer picker and execute the callback function on the selected buffer
 ---@param callback function with a single parameter of the buffer number
 function M.buffer_picker(callback)
-  local tabline = require("heirline").tabline
+  local tabline = require('heirline').tabline
   -- if buflist then
   local prev_showtabline = vim.opt.showtabline:get()
-  if prev_showtabline ~= 2 then vim.opt.showtabline = 2 end
+  if prev_showtabline ~= 2 then
+    vim.opt.showtabline = 2
+  end
   vim.cmd.redrawtabline()
   ---@diagnostic disable-next-line: undefined-field
   local buflist = tabline and tabline._buflist and tabline._buflist[1]
@@ -104,13 +124,16 @@ function M.buffer_picker(callback)
     vim.cmd.redrawtabline()
     local char = vim.fn.getcharstr()
     local bufnr = buflist._picker_labels[char]
-    if bufnr then callback(bufnr) end
+    if bufnr then
+      callback(bufnr)
+    end
     buflist._show_picker = false
   end
-  if prev_showtabline ~= 2 then vim.opt.showtabline = prev_showtabline end
+  if prev_showtabline ~= 2 then
+    vim.opt.showtabline = prev_showtabline
+  end
   vim.cmd.redrawtabline()
   -- end
 end
 
 return M
-

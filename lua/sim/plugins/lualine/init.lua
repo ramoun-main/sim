@@ -38,7 +38,7 @@ return {
   config = function()
     require('lualine').setup(utils.merge({
       options = {
-        theme = 'material-deep-ocean',
+        theme = 'material',
         component_separators = '|',
         section_separators = { left = '', right = '' },
       },
@@ -52,7 +52,7 @@ return {
               left = 1,
               right = 0,
             },
-            separator = '',
+            separator = {},
           },
           custom_sections.shortenedFilePath,
         },
@@ -71,14 +71,14 @@ return {
               left = 1,
               right = 0,
             },
-            separator = '',
+            separator = {},
           },
           custom_sections.shortenedFilePath,
         },
         lualine_c = { custom_sections.diff },
         lualine_x = { 'diagnostics' },
         lualine_y = { 'location', 'progress' },
-        lualine_z = { 'location', separator = { right = '' }, left_padding = 2 },
+        lualine_z = { { 'location', separator = { right = '' } } },
       },
       winbar = {
         lualine_a = { utils.get_short_cwd },

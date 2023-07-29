@@ -23,6 +23,10 @@ cmd([[
 	filetype plugin indent on
 ]])
 
+cmd([[
+  autocmd BufWinEnter * silent! :%foldopen!
+]])
+
 -- remove lines at the end of a buffer
 local augroup_name = 'SimEditorClean'
 local group = vim.api.nvim_create_augroup(augroup_name, { clear = true })

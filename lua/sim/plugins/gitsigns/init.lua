@@ -78,7 +78,9 @@ return {
         map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>', { desc = 'Select hunk' })
       end,
     }, user_config.plugins.gitsigns or {}))
+
+    -- set to show line blame by default
+    vim.cmd('Gitsigns toggle_current_line_blame')
   end,
   enabled = not vim.tbl_contains(user_config.disable_builtin_plugins, 'gitsigns'),
 }
-

@@ -1,7 +1,7 @@
 local editor_name = 'sim'
 
 local user_config = require(string.format('%s.core.user', editor_name))
-local u = require(string.format('%s.utils', editor_name))
+--[[ local u = require(string.format('%s.utils', editor_name)) ]]
 
 return {
   'mrjones2014/smart-splits.nvim',

@@ -6,7 +6,7 @@ return {
   'voldikss/vim-floaterm',
   cmd = { 'FloatermToggle', 'FloatermNew' },
   keys = {
-    { '<C-l>', '<cmd>FloatermToggle<cr>', desc = 'Floating Terminal' },
+    { '<C-m>', '<cmd>FloatermToggle<cr>', desc = 'Floating Terminal' },
   },
   config = function()
     local g = vim.g
@@ -23,4 +23,3 @@ return {
   end,
   enabled = not vim.tbl_contains(user_config.disable_builtin_plugins, 'terminal'),
 }
-
