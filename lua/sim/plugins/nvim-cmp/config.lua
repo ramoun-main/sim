@@ -41,6 +41,13 @@ local default_cmp_opts = {
       behavior = cmp.ConfirmBehavior.Insert,
       select = true,
     }),
+    ['<C-j>'] = cmp.mapping(function(_fallback)
+      cmp.mapping.abort()
+      require('copilot.suggestion').accept_line()
+    end, {
+      'i',
+      's',
+    }),
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -140,4 +147,3 @@ cmp.setup.cmdline(':', {
     { name = 'cmdline' },
   }),
 })
-
