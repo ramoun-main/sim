@@ -11,6 +11,7 @@ local default_config = {
   disable_builtin_plugins = {},
   add_plugins = {
     'fladson/vim-kitty',
+    'folke/neodev.nvim', --[[ developing plugins for neovim with lua ]]
   },
   plugins = {
     lsp_lines = {

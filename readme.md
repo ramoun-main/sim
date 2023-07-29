@@ -122,5 +122,4 @@ Updates CosmicNvim to the latest version
 
 [See more](https://github.com/CosmicNvim/CosmicNvim/wiki/Screenshots)
 
-hello = hi
-
+[outward selection](https://stackoverflow.com/questions/70937148/vi-increases-the-visual-selection-but-can-i-reduce-the-visual-selection-in-a)
