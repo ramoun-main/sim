@@ -122,4 +122,41 @@ Updates CosmicNvim to the latest version
 
 [See more](https://github.com/CosmicNvim/CosmicNvim/wiki/Screenshots)
 
+## Plugins
+
 [outward selection](https://stackoverflow.com/questions/70937148/vi-increases-the-visual-selection-but-can-i-reduce-the-visual-selection-in-a)
+
+## Configs
+
+- [ ] [Ecosse](https://github.com/ecosse3/nvim)
+- [ ] [react-setup](https://www.libhunt.com/posts/841129-my-neovim-setup-for-react-typescript-tailwind-css-etc)
+- [ ] [react nvim setup](https://rudra.dev/posts/setting-up-vim-for-react/)
+- [ ] [vim typescript](https://thoughtbot.com/blog/modern-typescript-and-react-development-in-vim)
+- [ ] [setp by setp llsp nextjs](https://levelup.gitconnected.com/a-step-by-step-guide-to-configuring-lsp-in-neovim-for-coding-in-next-js-a052f500da2)
+- [ ] [dev daily react setup](https://app.daily.dev/posts/iIOJZ8joP)
+- [ ] [TypeScript react dev](https://medium.com/@s1n7ax/neovim-for-typescript-react-development-fdc7082c8a78)
+- [ ] [mats config](https://dev.to/craftzdog/my-neovim-setup-for-react-typescript-tailwind-css-etc-58fb)
+- [ ] [sonar lint](https://www.sonarsource.com/products/sonarlint/)
+- [ ] [lvim](https://www.libhunt.com/r/gnmearacaun/lvim)
+- [ ] [oni2](https://www.libhunt.com/r/oni2)
+- [ ] [doom-nvim](https://github.com/doom-neovim/doom-nvim)
+- [ ] [leoVim](https://github.com/coderj001/LeoVim)
+- [ ] [vim visual multi](https://www.libhunt.com/r/vim-visual-multi)
+- [ ] [hop.nvim](https://www.libhunt.com/r/hop.nvim)
+- [ ] [nvim window picker](https://github.com/s1n7ax/nvim-window-picker)
+- [ ] [nvim window picker](https://www.libhunt.com/r/nvim-window-picker)
+- [ ] [react extract nvim](https://github.com/napmn/react-extract.nvim)
+- [ ] [lspsaga](https://github.com/nvimdev/lspsaga.nvim)
+- [ ] [indent blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
+- [ ] [vim sneak](https://github.com/justinmk/vim-sneak)
+- [ ] [coq nvim](https://github.com/ms-jpq/coq_nvim)
+- [ ] [catppuccin nvim](https://github.com/catppuccin/nvim)
+- [ ] [leap](https://github.com/ggandor/leap.nvim)
+- [ ] [trouble](https://github.com/folke/trouble.nvim)
+- [ ] [null ls](https://github.com/jose-elias-alvarez/null-ls.nvim)
+- [ ] [neorg](https://github.com/nvim-neorg/neorg)
+- [ ] [LazyVim](https://github.com/LazyVim/LazyVim)
+- [ ] [ale](https://github.com/dense-analysis/ale)
+- [ ] [coc](https://github.com/neoclide/coc.nvim)
+- [ ] [nvim setup](https://github.com/sergiornelas/nvim)
+- [ ] []()
