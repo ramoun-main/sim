@@ -60,7 +60,6 @@ local default_config = {
         format = false,
       },
       html = true,
-      css = true,
       tsserver = {
         format = true,
       },
