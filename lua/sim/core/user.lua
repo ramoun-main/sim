@@ -12,6 +12,28 @@ local default_config = {
   add_plugins = {
     'fladson/vim-kitty',
     'folke/neodev.nvim', --[[ developing plugins for neovim with lua ]]
+    --[[ 'NeogitOrg/neogit' ]]
+    'dbmrq/vim-ditto',
+    'tpope/vim-capslock',
+    'tpope/vim-sleuth',
+    'tpope/vim-rhubarb',
+    'tpope/vim-haml',
+    'tpope/vim-repeat',
+    'glts/vim-radical',
+    'tpope/vim-endwise',
+    'tpope/vim-abolish',
+    'tpope/vim-dotenv',
+    'dbmrq/vim-dialect',
+    'dbmrq/vim-chalk',
+    'mfussenegger/nvim-dap',
+    'SmiteshP/nvim-navic',
+    --[[ 'SmiteshP/nvim-navic', ]]
+    --'jesseduffield/lazygit'
+    --'dandavison/delta'
+    --'sindrets/diffview.nvim'
+    --'romgrk/barbar.nvim'
+    --'lukas-reineke/indent-blankline.nvim'
+    --'williamboman/mason.nvim'
   },
   plugins = {
     lsp_lines = {

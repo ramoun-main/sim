@@ -1,6 +1,7 @@
 local editor_name = 'sim'
 
 local modules = {
+  -- keep this order as it is or the mappings will be broken
   string.format('%s.core.options', editor_name),
   string.format('%s.core.plugins', editor_name),
   string.format('%s.core.commands', editor_name),

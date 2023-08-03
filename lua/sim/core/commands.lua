@@ -53,6 +53,14 @@ cmd('set whichwrap+=<,>,[,],h,l')
 cmd([[set iskeyword+=-]])
 cmd([[set formatoptions-=cro]]) -- TODO: this doesn't seem to work
 
+
+-- Highlight on yank
+cmd([[
+  augroup YankHighlight
+    autocmd!
+    autocmd TextYankPost * silent! lua vim.highlight.on_yank()
+  augroup end
+]])
+
 -- See :h vim.keymap for more info
---
---
+

@@ -11,7 +11,7 @@ return {
         position = 'bottom',
         margin = { 1, 0, 1, 0 },
         padding = { 3, 2, 3, 2 },
-        winblend = 20,
+        winblend = 7,
       },
       layout = {
         height = { min = 4, max = 25 },
@@ -19,18 +19,47 @@ return {
         spacing = 8,
         align = 'center',
       },
+      key_labels = {
+        ['<space>'] = 'SPC',
+        ['<cr>'] = 'RET',
+        ['<tab>'] = 'TAB',
+        ['<leader>'] = '',
+      },
+      icons = {
+        separator = '=>', -- symbol used between a key and it's label
+        group = '', -- symbol prepended to a group
+      },
+      popup_mappings = {
+        scroll_down = '<c-j>', -- binding to scroll down inside the popup
+        scroll_up = '<c-k>', -- binding to scroll up inside the popup
+      },
     })
 
     wk.register({
       ['<leader>'] = {
+        ['<leader>'] = {
+          name = '🌟 <leader>',
+          [';'] = {
+            name = 'semi',
+          },
+        },
+        a = {
+          name = '🦾 A.I',
+          c = {
+            name = 'Codeium',
+          },
+        },
         b = {
-          name = '+buffer',
+          name = '📝 Buffer',
         },
         c = {
-          name = '+quickfix',
+          name = '🔧 QuickFix',
         },
         f = {
-          name = '+find',
+          name = '🔎 Find',
+        },
+        g = {
+          name = '♐ GoTo',
         },
         h = {
           name = '+gitsigns',
@@ -49,9 +78,6 @@ return {
           w = {
             name = '+workspace',
           },
-        },
-        g = {
-          name = '+goto',
         },
         n = {
           name = '+tree',

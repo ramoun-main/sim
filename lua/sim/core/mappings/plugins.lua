@@ -3,7 +3,7 @@ local utils = require(string.format('%s.utils', editor_name))
 local map = utils.map
 local is_available = utils.is_available
 
--- plugin management (Lazy)
+map('n', '<leader>p/', '<cmd>:Lazy<cr>')
 map('n', '<leader>pc', ':Lazy check<cr>', { desc = 'Check Plugins' })
 map('n', '<leader>pu', ':Lazy update<cr>', { desc = 'Update Plugins' })
 map('n', '<leader>ps', ':Lazy show<cr>', { desc = 'Show Plugins' })
@@ -53,54 +53,6 @@ else
   map('n', '<C-Right>', '<cmd>vertical resize +2<CR>', { desc = 'Resize split right' })
 end
 
--- sidebar
-map('n', '<leader>e', ':NvimTreeToggle<CR>') -- toggle file explorer
-
---
--- telescope (IDE Search)
--- telescope
-map(
-  'n',
-  '<leader>ff',
-  '<cmd>Telescope find_files<cr>',
-  { desc = 'find files within current working directory, respects .gitignore' }
-)
-map(
-  'n',
-  '<leader>fc',
-  '<cmd>Telescope grep_string<cr>',
-  { desc = 'find string under cursor in current working directory' }
-)
-map('n', '<leader>fb', '<cmd>Telescope buffers<cr>', { desc = 'list open buffers in current neovim instance' })
-map('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', { desc = 'list available help tags' })
-map('n', '<leader>fK', '<cmd>Telescope keymaps<cr>', { desc = 'list all Sim keymaps' })
-
--- telescope git commands
-map(
-  'n',
-  '<leader>gc',
-  '<cmd>Telescope git_commits<cr>',
-  { desc = 'list all git commits (use <cr> to checkout) ["gc" for git commits]' }
-)
-map(
-  'n',
-  '<leader>gfc',
-  '<cmd>Telescope git_bcommits<cr>',
-  { desc = 'list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]' }
-)
-map(
-  'n',
-  '<leader>gb',
-  '<cmd>Telescope git_branches<cr>',
-  { desc = 'list git branches (use <cr> to checkout) ["gb" for git branch]' }
-)
-map(
-  'n',
-  '<leader>gs',
-  '<cmd>Telescope git_status<cr>',
-  { desc = 'list current changes per file with diff preview ["gs" for git status]' }
-)
-
 -- GitSigns
 if is_available('gitsigns.nvim') then
   --[[ map('n', '<leader>g', { desc = 'git' }) ]]
@@ -139,104 +91,6 @@ if is_available('gitsigns.nvim') then
   end, { desc = 'View Git diff' })
 end
 
--- find
--- if is_available('telescope.nvim') then
---[[ maps.n["<leader>f"] = sections.f ]]
---[[ maps.n["<leader>g"] = sections.g ]]
---[[ maps.n["<leader>gb"] = { function() require("telescope.builtin").git_branches() end, desc = "Git branches" } ]]
---[[ maps.n["<leader>gc"] = { function() require("telescope.builtin").git_commits() end, desc = "Git commits" } ]]
---[[ maps.n["<leader>gt"] = { function() require("telescope.builtin").git_status() end, desc = "Git status" } ]]
-map('n', '<leader>f<CR>', function()
-  require('telescope.builtin').resume()
-end, { desc = 'Resume previous search' })
-map('n', "<leader>f'", function()
-  require('telescope.builtin').marks()
-end, { desc = 'Find marks' })
---[[ map('<leader>fa', function() ]]
---[[   local cwd = vim.fn.stdpath('config') .. '/..' ]]
---[[   local search_dirs = {} ]]
---[[   for _, dir in ipairs(astronvim.supported_configs) do -- search all supported config locations ]]
---[[     if dir == astronvim.install.home then ]]
---[[       dir = dir .. '/lua/user' ]]
---[[     end -- don't search the astronvim core files ]]
---[[     if vim.fn.isdirectory(dir) == 1 then ]]
---[[       table.insert(search_dirs, dir) ]]
---[[     end -- add directory to search if exists ]]
---[[   end ]]
---[[   if vim.tbl_isempty(search_dirs) then -- if no config folders found, show warning ]]
---[[     utils.notify('No user configuration files found', vim.log.levels.WARN) ]]
---[[   else ]]
---[[     if #search_dirs == 1 then ]]
---[[       cwd = search_dirs[1] ]]
---[[     end -- if only one directory, focus cwd ]]
---[[     require('telescope.builtin').find_files({ ]]
---[[       prompt_title = 'Config Files', ]]
---[[       search_dirs = search_dirs, ]]
---[[       cwd = cwd, ]]
---[[     }) -- call telescope ]]
---[[   end ]]
---[[ end, { desc = 'Find AstroNvim config files' }) ]]
-map('n', '<leader>fb', function()
-  require('telescope.builtin').buffers()
-end, { desc = 'Find buffers' })
-map('n', '<leader>fc', function()
-  require('telescope.builtin').grep_string()
-end, { desc = 'Find for word under cursor' })
-map('n', '<leader>fC', function()
-  require('telescope.builtin').commands()
-end, { desc = 'Find commands' })
---[[ maps.n['<leader>ff'] = { ]]
---[[   function() ]]
---[[     require('telescope.builtin').find_files() ]]
---[[   end, ]]
---[[   desc = 'Find files', ]]
---[[ } ]]
-map('n', '<leader>fF', function()
-  require('telescope.builtin').find_files({ hidden = true, no_ignore = true })
-end, { desc = 'Find all files' })
-map('n', '<leader>fH', function()
-  require('telescope.builtin').help_tags()
-end, { desc = 'Find help' })
---
-map('n', '<leader>fa', function()
-  require('telescope.builtin').keymaps()
-end, { desc = 'Find keymaps' })
-map('n', '<leader>fm', function()
-  require('telescope.builtin').man_pages()
-end, { desc = 'Find man' })
-if is_available('nvim-notify') then
-  map('n', '<leader>fn', function()
-    require('telescope').extensions.notify.notify()
-  end, { desc = 'Find notifications' })
-end
-map('n', '<leader>fo', function()
-  require('telescope.builtin').oldfiles()
-end, { desc = 'Find history' })
-map('n', '<leader>fr', function()
-  require('telescope.builtin').registers()
-end, { desc = 'Find registers' })
-map('n', '<leader>ft', function()
-  require('telescope.builtin').colorscheme({ enable_preview = true })
-end, { desc = 'Find themes' })
---[[ maps.n["<leader>fw"] = { function() require("telescope.builtin").live_grep() end, desc = "Find words" } ]]
-map('n', '<leader>fW', function()
-  require('telescope.builtin').live_grep({
-    additional_args = function(args)
-      return vim.list_extend(args, { '--hidden', '--no-ignore' })
-    end,
-  })
-end, { desc = 'Find words in all files' })
-
---[[ maps.n["<leader>l"] = sections.l ]]
-map('n', '<leader>ls', function()
-  local aerial_avail, _ = pcall(require, 'aerial')
-  if aerial_avail then
-    require('telescope').extensions.aerial.aerial()
-  else
-    require('telescope.builtin').lsp_document_symbols()
-  end
-end, { desc = 'Search symbols' })
-
 -- Improved Code Folding
 if is_available('nvim-ufo') then
   map('n', 'zR', function()
@@ -259,11 +113,11 @@ end
 -- restart lsp server (not on youtube nvim video)
 map('n', '<leader>rs', ':LspRestart<CR>', { desc = 'mapping to restart lsp if necessary' })
 
--- Comment : --TODO: is it Comment or Comments
+-- Comment : -- TODO : is it Comment or Comments
 if is_available('Comment.nvim') then
   map('n', '<leader>/', function()
     require('Comment.api').toggle.linewise.count(vim.v.count > 0 and vim.v.count or 1)
-  end, { desc = 'Toggle comment line' })
+  end, { desc = 'Toggle Line Comment' })
   map(
     'v',
     '<leader>/',
