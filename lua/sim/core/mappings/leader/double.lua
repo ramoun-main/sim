@@ -19,12 +19,15 @@ map('n', '<leader>ck', ':cexpr []<cr>', { desc = 'Clear List' })
 map('n', '<leader>cf', ':cfdo %s/', { desc = 'Search & Replace' })
 map('n', '<leader>cp', ':cprev<cr>zz', { desc = 'Prev Item' })
 map('n', '<leader>cn', ':cnext<cr>zz', { desc = 'Next Item' })
+--[[ -- Toggle quicklist ]]
+map('n', '<leader>cq', "<cmd>lua require('utils').toggle_quicklist()<CR>", { desc = 'Toggle QuickFix' })
 
 -- Buffer Navigation
 map('n', '<leader>bo', '<cmd>enew<cr>', { desc = 'New Buffer' })
 map('n', '<leader>bp', ':bprev<cr>', { desc = 'Prev Buffer' })
 map('n', '<leader>bn', ':bnext<cr>', { desc = 'Next Buffer' })
 map('n', '<leader>bd', ':bdelete<cr>', { desc = 'Delete Buffer' })
+map('n', '<leader>bx', ":lua require('mini.bufremove').delete(0, false)<CR>", { desc = 'Remove Buffer' })
 
 -- Splits
 map('n', '<leader>sv', '<C-w>v', { desc = 'Split Vertically' })
@@ -34,7 +37,7 @@ map('n', '<leader>se', '<C-w>=', { desc = ' Equalize Splits' })
 
 -- Location List
 map('n', '<leader>fL', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {
-  desc = 'CI Replace File. word under the cursor',
+  desc = 'Replace Word Under Cursor',
 })
 
 map('n', '<leader>ss', '<cmd>w<cr>', { desc = 'Save' })

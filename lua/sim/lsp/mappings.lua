@@ -16,9 +16,13 @@ function M.init(client, bufnr)
   buf_map('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition()<cr>', { desc = 'Go to type definition' })
   buf_map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', { desc = 'Go to reference' })
 
-  -- diagnostics
   buf_map('n', '[g', '<cmd>lua vim.diagnostic.goto_prev()<cr>', { desc = 'Prev diagnostic' })
-  buf_map('n', ']g', '<cmd>lua vim.diagnostic.goto_next()<cr>', { desc = 'Next diagnostic' })
+  buf_map(
+    'n',
+    ']g',
+    "<cmd>lua vim.diagnostic.goto_next({ float = { border = 'rounded', max_width = 100 }})<CR>",
+    { desc = 'Next diagnostic' }
+  )
   buf_map(
     'n',
     'ge',
@@ -35,13 +39,16 @@ function M.init(client, bufnr)
   -- hover
   buf_map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', { desc = 'Show documentation' })
 
-  -- code actions
+  -- code actions (diagnostics)
   buf_map('n', 'gn', '<cmd>lua vim.lsp.buf.rename()<cr>', { desc = 'Rename' })
   buf_map('n', '<leader>la', '<cmd>lua vim.lsp.buf.code_actions()<cr>', { desc = 'Code Actions' })
-  buf_map('v', '<leader>la', '<cmd>lua vim.lsp.buf.range_code_actions()<cr>', { desc = 'Range Code Actions' })
+  buf_map('n', '<leader>lc', '<cmd>lua vim.lsp.buf.code_action()<CR>', { desc = 'Code Action' })
+  --[[ buf_map('v', '<leader>la', "<cmd>'<,'>lua vim.lsp.buf.code_action()<cr>", buf_({ desc = 'Code Actions' })) ]]
+  buf_map('v', '<leader>lc', '<cmd>lua vim.lsp.buf.range_code_actions()<cr>', { desc = 'Range Code Actions' })
 
   -- formatting
   buf_map('n', '<leader>lf', '', { desc = 'Format', callback = lsp_utils.format })
+  --[[ buf_map('n', '<leader>cf', '<cmd>lua vim.lsp.buf.format({ async = true })<CR>', { desc = '' }) ]]
   buf_map('v', '<leader>lf', '<cmd>lua vim.lsp.buf.range_formatting()<cr>', { desc = 'Range Format' })
 
   -- lsp workspace
@@ -61,4 +68,3 @@ function M.init(client, bufnr)
 end
 
 return M
-

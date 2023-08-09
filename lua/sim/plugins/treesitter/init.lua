@@ -52,7 +52,7 @@ return {
     'JoosepAlviste/nvim-ts-context-commentstring',
     'nvim-treesitter/nvim-treesitter-refactor',
     'RRethy/nvim-treesitter-endwise',
-    'p00f/nvim-ts-rainbow',
+    'HiPhish/nvim-ts-rainbow2',
   },
   event = 'BufEnter',
   build = ':TSUpdate',

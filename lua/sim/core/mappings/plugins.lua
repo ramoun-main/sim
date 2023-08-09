@@ -125,3 +125,5 @@ if is_available('Comment.nvim') then
     { desc = 'Toggle comment for selection' }
   )
 end
+
+map('n', '<C-y>;', 'C-Y,', { desc = 'Expand' })

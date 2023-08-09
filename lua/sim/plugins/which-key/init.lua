@@ -46,7 +46,7 @@ return {
         a = {
           name = '🦾 A.I',
           c = {
-            name = 'Codeium',
+            name = '+codeium',
           },
         },
         b = {
@@ -59,10 +59,10 @@ return {
           name = '🔎 Find',
         },
         g = {
-          name = '♐ GoTo',
+          name = '🐙 Git',
         },
         h = {
-          name = '+gitsigns',
+          name = '+gitcsigns',
           t = {
             name = '+toggle',
           },

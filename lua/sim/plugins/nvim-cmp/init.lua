@@ -20,4 +20,3 @@ return {
   event = 'InsertEnter',
   enabled = not vim.tbl_contains(user_config.disable_builtin_plugins, 'nvim-cmp'),
 }
-

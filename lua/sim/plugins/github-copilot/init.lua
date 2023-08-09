@@ -1,3 +1,13 @@
---[[ return { 'github/copilot' } ]]
+--[[ local view = require(string.format('%s.utils.view', 'sim')) ]]
+--[[]]
+--[[ return { ]]
+--[[   'github/copilot', ]]
+--[[   config = function(prompt) ]]
+--[[     view.show(prompt, 'luastatus.w') ]]
+--[[   end, ]]
+--[[   init = function() ]]
+--[[     cmd.install('ai-package') ]]
+--[[   end, ]]
+--[[ } ]]
 -- https://docs.github.com/en/copilot/getting-started-with-github-copilot?tool=vimneovim-
 return {}

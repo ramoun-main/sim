@@ -15,7 +15,6 @@ map(
   "<cmd>lua require('telescope.builtin').find_files({ hidden = true, no_ignore = true })<CR>",
   { desc = 'Find (All Files)' }
 )
-
 map('n', '<leader>fb', '<cmd>Telescope buffers<cr>', { desc = 'Find Buffer' })
 map('n', '<leader>fc', '<cmd>Telescope grep_string<cr>', { desc = 'Grep Current String' })
 map('n', '<leader>fC', '<cmd>Telescope commands<cr>', { desc = 'Find Commands' })
@@ -50,7 +49,27 @@ map('n', '<leader>fw', function()
     end,
   })
 end, { desc = 'Find Word (All Files)' })
+map(
+  'n',
+  '<Leader>fW',
+  "<CMD>lua require('telescope.builtin').grep_string({ initial_mode = 'normal' })<CR>",
+  { desc = 'find Word Normal' }
+)
+-- Find word/file across project
+map(
+  'n',
+  '<Leader>fp',
+  "<CMD>lua require('plugins.telescope').project_files({ default_text = vim.fn.expand('<cword>'), initial_mode = 'normal' })<CR>",
+  { desc = 'Find Word/File' }
+)
 map('n', '<leader>f"', '<cmd>Telescope registers<cr>', { desc = 'Find registers' })
 map('n', "<leader>f'", '<cmd>Telescope marks<cr>', { desc = 'Find Marks' })
 
 -- g - Key
+--
+map('n', '<leader>fx', function()
+  require(string.format('%s.plugins.telescope.utils', editor_name)).project_files({
+    default_text = vim.fn.expand('<cword>'),
+    initial_mode = 'normal',
+  })
+end, { desc = 'Find Files (All Files)' })

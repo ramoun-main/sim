@@ -12,8 +12,19 @@ map('i', 'jk', '<ESC>')
 map('n', 'gM', 'gm')
 map('n', 'gm', 'gM')
 
+-- Open links under cursor in browser with gx
+if vim.fn.has('macunix') == 1 then
+  map('n', 'gX', "<cmd>silent execute '!open ' . shellescape('<cWORD>')<CR>", { desc = 'Open Link' })
+else
+  map('n', 'gX', "<cmd>silent execute '!xdg-open ' . shellescape('<cWORD>')<CR>", { desc = 'Open Link' })
+end
+
 -- delete single character without copying into register
+-- Don't yank on delete char
 map('n', 'x', '"_x')
+map('n', 'X', '"_X')
+map('v', 'x', '"_x')
+map('v', 'X', '"_X')
 
 -- increment/decrement numbers (e.g: 7)
 map('n', '+', '<C-a>') -- increment
@@ -21,8 +32,8 @@ map('n', '-', '<C-x>') -- decrement
 map('n', '0', '^')
 
 -- buffer navigation
-map('n', '<Tab>', ':BufferLineCycleNext<CR>', { desc = 'Next Buffer' })
-map('n', '<S-Tab>', ':BufferLineCyclePrev<CR>', { desc = 'Prev Buffer' })
+--[[ map('n', '<Tab>', ':BufferLineCycleNext<CR>', { desc = 'Next Buffer' }) ]]
+--[[ map('n', '<S-Tab>', ':BufferLineCyclePrev<CR>', { desc = 'Prev Buffer' }) ]]
 
 -- tab navigation
 -- TODO: Add rest of tab options : move tabs and much more. check the docs
@@ -53,6 +64,7 @@ map('v', '<Tab>', '>gv', { desc = 'Indent line' })
 -- View
 map('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move Text Down' })
 map('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move Text Up' })
+-- Don't yank on visual paste
 map('v', 'p', '"_dP', { desc = 'dont override the paste' })
 -- normal
 map('n', 'J', 'mzJ`z', { desc = 'join current line and line below it' })
@@ -64,8 +76,27 @@ map('n', '<C-u>', '<C-u>zz', {
 })
 map('n', 'n', 'nzzzv', { desc = 'repeats the search forward' })
 map('n', 'N', 'Nzzzv', { desc = 'repeats the search backward' })
+-- TODO : Add the gC for capitalizing any string
+--[[ map('n', 'gC', '', {desc='Capitalize the words'}) ]]
 
 -- FILE
 map('n', '<C-s>', '<cmd>w!<cr>', { desc = 'Force write' })
 map('i', '<C-s>', '<ESC> :w<CR>', { desc = 'Force write' })
 map('n', '<C-q>', 'cmd>q!<cr>', { desc = 'Force quit' })
+
+-- Cmnds
+--
+-- Avoid issues because of remapping <c-a> and <c-x> below
+vim.cmd([[
+  nnoremap <Plug>SpeedDatingFallbackUp <c-a>
+  nnoremap <Plug>SpeedDatingFallbackDown <c-x>
+]])
+
+-- Manually invoke speeddating in case switch.vim didn't work
+map('n', '<C-a>', ':if !switch#Switch() <bar> call speeddating#increment(v:count1) <bar> endif<CR>', { desc = '' })
+map(
+  'n',
+  '<C-x>',
+  ":if !switch#Switch({'reverse': 1}) <bar> call speeddating#increment(-v:count1) <bar> endif<CR>",
+  { desc = '' }
+)

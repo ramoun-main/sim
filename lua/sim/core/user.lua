@@ -10,23 +10,24 @@ local default_config = {
   border = 'rounded',
   disable_builtin_plugins = {},
   add_plugins = {
+    'nvim-lua/plenary.nvim',
     'fladson/vim-kitty',
-    'folke/neodev.nvim', --[[ developing plugins for neovim with lua ]]
+    --[[ 'folke/neodev.nvim', --[[ developing plugins for neovim with lua ]]
     --[[ 'NeogitOrg/neogit' ]]
-    'dbmrq/vim-ditto',
-    'tpope/vim-capslock',
-    'tpope/vim-sleuth',
-    'tpope/vim-rhubarb',
-    'tpope/vim-haml',
-    'tpope/vim-repeat',
-    'glts/vim-radical',
+    --[[ 'dbmrq/vim-ditto', ]]
+    --[[ 'tpope/vim-capslock', ]]
+    --[[ 'tpope/vim-sleuth', ]]
+    --[[ 'tpope/vim-rhubarb', ]]
+    --[[ 'tpope/vim-haml', ]]
+    --[[ 'tpope/vim-repeat', ]]
+    --[[ 'glts/vim-radical', ]]
     'tpope/vim-endwise',
-    'tpope/vim-abolish',
+    --[[ 'tpope/vim-abolish', ]]
     'tpope/vim-dotenv',
-    'dbmrq/vim-dialect',
-    'dbmrq/vim-chalk',
-    'mfussenegger/nvim-dap',
-    'SmiteshP/nvim-navic',
+    --[[ 'dbmrq/vim-dialect', ]]
+    --[[ 'dbmrq/vim-chalk', ]]
+    --[[ 'mfussenegger/nvim-dap', ]]
+    --[[ 'SmiteshP/nvim-navic', ]]
     --[[ 'SmiteshP/nvim-navic', ]]
     --'jesseduffield/lazygit'
     --'dandavison/delta'
@@ -75,11 +76,11 @@ local default_config = {
       astro = true,
       tailwindcss = true,
       jsonls = {
-        format = false,
+        format = true,
       },
       pyright = true,
       lua_ls = {
-        format = false,
+        format = true,
       },
       html = true,
       tsserver = {

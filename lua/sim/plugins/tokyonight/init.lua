@@ -6,6 +6,7 @@ return {
   { -- color scheme
     'folke/tokyonight.nvim',
     lazy = false,
+    priority = 1000,
     config = function()
       local config = require(string.format('%s.plugins.tokyonight.config', editor_name))
       require('tokyonight').setup(config)

@@ -21,10 +21,9 @@ return {
       end
 
       config_opts.sources = u.merge_list({
-        null_ls.builtins.code_actions.eslint_d,
-        null_ls.builtins.diagnostics.eslint_d,
+        null_ls.builtins.code_actions.eslint,
         null_ls.builtins.diagnostics.eslint,
-        null_ls.builtins.formatting.eslint,
+        null_ls.builtins.formatting.prettier,
         null_ls.builtins.diagnostics.markdownlint,
         null_ls.builtins.formatting.prettierd.with({
           env = {
