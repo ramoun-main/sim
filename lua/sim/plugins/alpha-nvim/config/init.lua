@@ -1,3 +1,5 @@
+local button = require('sim.plugins.alpha-nvim.config.button')
+local icons = require('sim.utils.icons')
 local M = {}
 
 function M.setup()
@@ -37,20 +39,20 @@ function M.setup()
   -- ╰──────────────────────────────────────────────────────────╯
 
   local dateSeed =
-    io.popen('echo "$(LANG=en_us_88591; date +%a) $(date +%d) $(LANG=en_us_88591; date +%b)" | tr -d "\n"')
+      io.popen('echo "$(LANG=en_us_88591; date +%a) $(date +%d) $(LANG=en_us_88591; date +%b)" | tr -d "\n"')
   if dateSeed == nil then
     return
   end
   local date = dateSeed:read('*a')
   dateSeed:close()
 
-  local datetime = os.date(' %H:%M')
+  local datetime2 = os.date(' %H:%M')
 
   local hi_top_section = {
     type = 'text',
     val = '┌────────────   Today is '
-      .. date
-      .. ' ────────────┐',
+        .. date
+        .. ' ────────────┐',
     opts = {
       position = 'center',
       hl = 'HeaderInfo',
@@ -69,12 +71,38 @@ function M.setup()
   local hi_bottom_section = {
     type = 'text',
     val = '└───══───══───══───  '
-      .. datetime
-      .. '  ───══───══───══────┘',
+        .. datetime2
+        .. '  ───══───══───══────┘',
     opts = {
       position = 'center',
       hl = 'HeaderInfo',
     },
+  }
+
+  dashboard.section.buttons.val = {
+    button(
+      '<C-P>',
+      icons.eco.fileNoBg .. ' ' .. 'Find File',
+      "<cmd>lua require('plugins.telescope').project_files()<CR>",
+      {}
+    ),
+    button(
+      '<S-P>',
+      icons.eco.word .. ' ' .. 'Find Word',
+      "<cmd>lua require('plugins.telescope.pickers.multi-rg')()<CR>",
+      {}
+    ),
+    button('SPC s h', icons.eco.fileRecent .. ' ' .. 'Recents', '<cmd>Telescope oldfiles hidden=true<CR>', {}),
+    button(
+      'SPC / s d',
+      icons.eco.timer .. ' ' .. 'Load Current Dir Session',
+      '<cmd>SessionManager load_current_dir_session<CR>',
+      {}
+    ),
+    button('SPC / u', icons.eco.packageDown .. ' ' .. 'Update Plugins', '<cmd>Lazy update<CR>', {}),
+    button('SPC / i', icons.eco.package .. ' ' .. 'Manage Plugins', '<cmd>Lazy<CR>', {}),
+    button('SPC / c', icons.eco.cog .. ' ' .. 'Settings', '<cmd>e $MYVIMRC<CR>', {}),
+    button('-', icons.eco.exit .. ' ' .. 'Exit', '<cmd>exit<CR>', {}),
   }
 
   dashboard.section.buttons.val = {

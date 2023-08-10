@@ -2,7 +2,6 @@ local editor_name = 'sim'
 
 local user_config = require(string.format('%s.core.user', editor_name))
 local u = require(string.format('%s.utils', editor_name))
-local map = require(string.format('%s.utils', editor_name)).map
 
 return {
   'L3MON4D3/LuaSnip',
@@ -16,8 +15,8 @@ return {
     }, user_config.plugins.luasnip or {}))
 
     -- extend html snippets to react files
-    require('luasnip').filetype_extend('javascriptreact', { 'html', 'css', 'js' })
-    require('luasnip').filetype_extend('typescriptreact', { 'html', 'css', 'js' })
+    require('luasnip').filetype_extend('javascriptreact', { 'html' })
+    require('luasnip').filetype_extend('typescriptreact', { 'html' })
 
     -- load snippets (friendly-snippets)
     require('luasnip.loaders.from_vscode').lazy_load()

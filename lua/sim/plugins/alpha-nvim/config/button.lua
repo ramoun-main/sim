@@ -39,3 +39,5 @@ function button(sc, txt, keybind, keybind_opts)
     opts = opts,
   }
 end
+
+return button
