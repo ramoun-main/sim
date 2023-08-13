@@ -3,8 +3,6 @@ local u = require(string.format('%s.utils', EditorName))
 
 local defaults = {}
 
-return {
-  function()
-    require('colorizer').setup(u.merge(defaults, user_config.plugins.colorizer or {}))
-  end,
-}
+return function()
+  require('colorizer').setup(u.merge(defaults, user_config.plugins.colorizer or {}))
+end
