@@ -1,5 +1,4 @@
---[[ import global editor name ]]
-require('editor-name')
+EditorName = 'sim'
 
 -- check if vim version is capable of running the Sim Editor
 if vim.fn.has('nvim-0.8') == 0 then
