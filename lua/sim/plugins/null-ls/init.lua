@@ -1,12 +1,10 @@
-local editor_name = 'sim'
-
-local user_config = require(string.format('%s.core.user', editor_name))
-local u = require(string.format('%s.utils', editor_name))
+local user_config = require(string.format('%s.core.user', EditorName))
+local u = require(string.format('%s.utils', EditorName))
 
 return {
   'jose-elias-alvarez/null-ls.nvim',
   config = function()
-    local defaults = require(string.format('%s.lsp.providers.defaults', editor_name))
+    local defaults = require(string.format('%s.lsp.providers.defaults', EditorName))
     local null_ls = require('null-ls')
     local config_opts = u.merge(user_config.lsp.servers.null_ls or {}, {
       default_cosmic_sources = true,
@@ -40,4 +38,3 @@ return {
   event = 'VeryLazy',
   enabled = not vim.tbl_contains(user_config.disable_builtin_plugins, 'null_ls'),
 }
-
