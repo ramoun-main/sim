@@ -1,8 +1,6 @@
-local editor_name = 'sim'
-
-local user_config = require(string.format('%s.core.user', editor_name))
-local icons = require(string.format('%s.utils.icons', editor_name))
-local u = require(string.format('%s.utils', editor_name))
+local user_config = require(string.format('%s.core.user', EditorName))
+local icons = require(string.format('%s.utils.icons', EditorName))
+local u = require(string.format('%s.utils', EditorName))
 
 -- set up args
 local args = {
@@ -52,7 +50,7 @@ return {
     require('nvim-tree').setup(u.merge(args, user_config.plugins.nvim_tree or {}))
   end,
   init = function()
-    local map = require(string.format('%s.utils', editor_name)).map
+    local map = require(string.format('%s.utils', EditorName)).map
 
     map('n', '<C-n>', ':NvimTreeToggle<CR>', { desc = 'Toggle Tree' })
     map('n', '<leader>nt', ':NvimTreeToggle<CR>', { desc = 'Toggle Tree' })
@@ -67,4 +65,3 @@ return {
   },
   enabled = not vim.tbl_contains(user_config.disable_builtin_plugins, 'nvim-tree'),
 }
-
