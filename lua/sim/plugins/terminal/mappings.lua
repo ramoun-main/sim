@@ -8,4 +8,3 @@ map('t', '<C-l>', [[<C-\><C-n>]], { desc = 'Close Floaterm' })
 -- map('t', '<C-w>h', [[<C-\><C-n>:FloatermPrev<CR>]], { desc = 'Prev terminal' })
 -- map('t', '<C-w>n', [[<C-\><C-n>:FloatermNew<CR>]], { desc = 'New terminal' })
 -- map('t', '<C-w>c', [[<C-\><C-n>:FloatermKill<CR>]], { desc = 'Kill current terminal' })
-
