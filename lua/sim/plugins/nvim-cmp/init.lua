@@ -1,11 +1,9 @@
-local editor_name = 'sim'
-
-local user_config = require(string.format('%s.core.user', editor_name))
+local user_config = require(string.format('%s.core.user', EditorName))
 
 return {
   'hrsh7th/nvim-cmp',
   config = function()
-    require(string.format('%s.plugins.nvim-cmp.config', editor_name))
+    require(string.format('%s.plugins.nvim-cmp.config', EditorName))
   end,
   dependencies = {
     'hrsh7th/cmp-nvim-lsp',
@@ -20,4 +18,3 @@ return {
   event = 'InsertEnter',
   enabled = not vim.tbl_contains(user_config.disable_builtin_plugins, 'nvim-cmp'),
 }
-

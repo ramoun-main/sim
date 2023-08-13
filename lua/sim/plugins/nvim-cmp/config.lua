@@ -1,10 +1,8 @@
-local editor_name = 'sim'
-
 local cmp = require('cmp')
-local u = require(string.format('%s.utils', editor_name))
+local u = require(string.format('%s.utils', EditorName))
 local luasnip = require('luasnip')
-local user_config = require(string.format('%s.core.user', editor_name))
-local icons = require(string.format('%s.utils.icons', editor_name))
+local user_config = require(string.format('%s.core.user', EditorName))
+local icons = require(string.format('%s.utils.icons', EditorName))
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 
 local has_words_before = function()
@@ -140,4 +138,3 @@ cmp.setup.cmdline(':', {
     { name = 'cmdline' },
   }),
 })
-
