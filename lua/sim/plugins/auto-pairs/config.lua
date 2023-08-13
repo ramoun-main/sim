@@ -13,6 +13,6 @@ return {
       },
       disable_filetype = { 'TelescopePrompt', 'vim' },
       fast_wrap = {},
-    }, user_config.plugins.nvim_autopairs or {}))
+    }, user_config.plugins.auto_pairs or {}))
   end,
 }
