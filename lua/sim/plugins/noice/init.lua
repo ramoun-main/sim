@@ -1,8 +1,6 @@
-local editor_name = 'sim'
-
-local user_config = require(string.format('%s.core.user', editor_name))
-local u = require(string.format('%s.utils', editor_name))
-local map = require(string.format('%s.utils', editor_name)).map
+local user_config = require(string.format('%s.core.user', EditorName))
+local u = require(string.format('%s.utils', EditorName))
+local map = require(string.format('%s.utils', EditorName)).map
 
 return {
   'folke/noice.nvim',
