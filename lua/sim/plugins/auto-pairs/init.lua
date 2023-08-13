@@ -1,23 +1,9 @@
-local editor_name = 'sim'
-
-local user_config = require(string.format('%s.core.user', editor_name))
-local u = require(string.format('%s.utils', editor_name))
+local user_config = require(string.format('%s.core.user', EditorName))
+local config = require(string.format('%s.plugins.auto-pairs.config', EditorName))
 
 return {
   'windwp/nvim-autopairs',
-  config = function()
-    require('nvim-autopairs').setup(u.merge({
-      check_ts = true,
-      ts_config = {
-        lua = { 'string', 'source' },
-        javascript = { 'string', 'template_string' },
-        typescript = { 'string', 'template_string' },
-        java = false,
-      },
-      disable_filetype = { 'TelescopePrompt', 'vim' },
-      fast_wrap = {},
-    }, user_config.plugins.nvim_autopairs or {}))
-  end,
+  config = config,
   event = 'InsertEnter',
   opts = {
     check_ts = true,
