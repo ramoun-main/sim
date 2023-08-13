@@ -1,35 +1,14 @@
-local editor_name = 'sim'
-
-local user_config = require(string.format('%s.core.user', editor_name))
-local utils = require(string.format('%s.utils', editor_name))
-
-local defaults = {
-  border_style = 'rounded',
-}
+local user_config = require(string.format('%s.core.user', EditorName))
+local init = require(string.format('%s.plugins.cosmic-ui.ini', EditorName))
+local config = require(string.format('%s.plugins.cosmic-ui.config', EditorName))
 
 return {
   'CosmicNvim/cosmic-ui',
+  event = 'VeryLazy',
   dependencies = {
     'MunifTanjim/nui.nvim',
   },
-  init = function()
-    user_config.lsp.add_on_attach_mapping(function(client, bufnr)
-      local buf_map = utils.create_buf_map(bufnr)
-
-      buf_map('n', 'gn', '<cmd>lua require("cosmic-ui").rename()<cr>', { desc = 'Rename' })
-      buf_map('n', '<leader>la', '<cmd>lua require("cosmic-ui").code_actions()<cr>', { desc = 'Code Actions' })
-      buf_map(
-        'v',
-        '<leader>la',
-        '<cmd>lua require("cosmic-ui").range_code_actions()<cr>',
-        { desc = 'Range Code Actions' }
-      )
-    end)
-  end,
-  config = function()
-    require('cosmic-ui').setup(utils.merge(defaults, user_config.plugins.cosmic_ui or {}))
-  end,
-  event = 'VeryLazy',
+  init = init,
+  config = config,
   enabled = not vim.tbl_contains(user_config.disable_builtin_plugins, 'cosmic-ui'),
 }
-
