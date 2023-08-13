@@ -1,24 +1,12 @@
-local editor_name = 'sim'
-
-local user_config = require(string.format('%s.core.user', editor_name))
-local u = require(string.format('%s.utils', editor_name))
-
-local defaults = {
-  pre_save_cmds = { 'NvimTreeClose', 'cclose', 'lua vim.notify.dismiss()' },
-  auto_session_enabled = true,
-  auto_restore_enabled = true,
-  auto_save_enabled = true,
-  log_level = 'error',
-}
+local user_config = require(string.format('%s.core.user', EditorName))
+local config = require(string.format('%s.plugins.auto-session.config', EditorName))
 
 return {
   'rmagatti/auto-session',
   lazy = false,
-  config = function()
-    require('auto-session').setup(u.merge(defaults, user_config.plugins.auto_session or {}))
-  end,
+  config = config,
   init = function()
-    require(string.format('%s.plugins.auto-session.mappings', editor_name))
+    require(string.format('%s.plugins.auto-session.mappings', EditorName))
   end,
   enabled = not vim.tbl_contains(user_config.disable_builtin_plugins, 'auto-session'),
 }
