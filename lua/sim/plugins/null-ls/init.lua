@@ -22,6 +22,8 @@ return {
         null_ls.builtins.code_actions.eslint_d,
         null_ls.builtins.diagnostics.eslint_d,
         null_ls.builtins.formatting.eslint_d,
+        null_ls.builtins.formatting.fixjson,
+        null_ls.builtins.diagnostics.cfn_lint,
         null_ls.builtins.diagnostics.markdownlint,
         null_ls.builtins.formatting.prettierd.with({
           env = {
