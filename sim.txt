@@ -1,0 +1,442 @@
+29a5a7a refactor(plugins): remove useless plugins and fix split c-j
+1d87044 fix(vim-emmet): blocking auto complete from workign
+ad9e85b feat(Alpha): edit alpha plugin and auto save and fix snip
+786a66b feat(EconVim): add main stuff
+bb6c868 feat(sim!): add sim to .config and new plugins
+dc4873d feat: update readme
+7001f39 feat: add readme
+9d2c3a3 feat: add copilot
+2b3f18d refactor(:rocket:): add new line to readme :book:
+
+fc94436 feat: refactor plugins
+
+39cb5aa refactor: colorscheme
+07ac660 refactor: lualine
+f77030e refactor: organize related files
+a858179 refactor(editor): clean up editor configs
+8fb4925 feat(sim): add sim options
+4a79068 feat(todo): add to new todos
+98e74db refactor(user): update ensure_installed list
+7d5c64f feat(todo): add to new todos
+9b0845b feat(repo): clean up #3
+b2909ed feat(repo): clean up #2
+37b1d23 feat(todo): add to new todos
+cfaf7db feat(mappings): update mappings and add todo
+37254ed feat(mappings): add new mappings
+c4727d1 feat(mappings): add new mappings and refactor ui
+1e786b2 feat(remap): do some remaping
+78dbd37 feat(keymaps): custom keymaps
+2bee04a feat: bump lazy lock
+c033f60 Update .gitignore (#102)
+ef67373 bump lazy-lock
+bf7a420 chore: lazy lock update + clean up nvim-tree mappings
+defdf94 feat(config): clean up user lsp config
+90ca46d feat(lsp): update sumneko to lua_ls
+1e23745 fix: user editor config error if not present
+8f73bce feat(mappings): add plugin management mappings
+a35149c update lazy-lock
+3654b08 feat(lualine): add quicker refreshing for macro updates
+54fd817 fix: user mappings (#94)
+b64ae5b fix(null-ls): better default if user doesn't define sources
+0e4f4fe Update lazy lock
+a3d607d fix: diagnostic float color
+c58f388 fix: diagnostic float formatting
+f27a5ef feat(diagnostics): clean up virtual text formatting
+3fd2ede feat(diagnostics): clean up virtual text formatting
+b389390 fix: lsp lines init keymap
+b41efdc fix: lsp lines init keymap
+433233b feat: change telescope git keymaps
+8a72226 fix: user config error if doesn't exits
+c429651 fix(telescope): fix init mapping
+affdcbc feat(which-key): add border
+1720150 refactor(mappings): clean up telescope
+9aeb095 refactor(mappings): update lsp mappings
+8836c5b refactor(mappings): update moar mappings
+e16fce2 feat(mappings): add plugin mapping descriptions
+5966aa4 start keymap descriptions
+5673bcd feat(lualine): add macro recording status
+c58d5fb fix(lsp): set auto format on save - clear autocmds
+f87b823 fix(lsp): set auto format on save autocmd to buffer
+988ab6b fix(lsp): set auto format on save autocmd to buffer
+bd108bb fix(lsp): don't register autocmd for servers not allowed to format by user config
+f833c18 fix(lsp): don't register autocmd for servers not allowed to format by user config
+136b1ce fix(lsp): add nexted flag to autocmd
+01a159d add comments
+3d4b00b feat: buf mapping util clean up
+464f92b feat(mappings): decouple plugin lsp mappings
+b86e01b feat(lsp): clean up commands and formatting
+40eef21 feat(lsp): clean up commands and formatting
+0295f75 feat: clean up
+0dc00b5 Lockfile update
+98fdfb4 refactor: clean out unneeded lsp settings
+a80b7e5 fix: cmp capabilities
+dd7a3ba feat: disable lsp_lines by default
+96499d0 feat: disable lsp_lines by default
+11fecdb fix: lsp not attaching
+710752e feat: lazy telescope
+be6a529 feat: moar lazy optimizations
+23db412 feat: update plugins
+51d66a7 Update docs
+59d1302 Update docs
+dfe508d add lazy lock file, really
+ed460d2 add lazy lock file
+79fd722 add lazy lock file
+3e84a02 fix: user enabled toggle
+202e8a3 feat: add lsp_lines
+fd1e2ab feat: new auto-session defaults
+f53ef91 fix: terminal keys for init
+d9b173b feat: add more ts languages
+364ab52 moar clean up
+4569c97 refactor: add mason.nvim (#89)
+03fc837 refactor: add mason.nvim (#89)
+daaafc1 Lazy.nvim (#88)
+2aca763 fix: disable lualine option
+7e81d05 Clean out themes + lots of clean up (#87)
+803a69b fix: revert hover to lsp handler
+924b2e3 feat: remove lsp-signature for noice
+8872b75 fix plugin load order
+445a68a feat: add noice
+bcf7ea5 Add packer snapshots
+cfac67c feat: add border to autocomplete
+252c044 docs: change theme name to Catppuccin to match recent updates (#84)
+b3474cd Fix devicons
+84c7f84 feat: clean up utils reload fn
+cd80504 feat: remove filetype.nvim
+e009f82 feat: lsp diagnostics line formatting
+6f73a28 feat: clean up keymap api
+ce2cb28 feat: update diagnostics message
+cf6f7d4 feat: pin theme versions
+10a4b6e Support for Neovim Monokai theme (#74)
+03ae0d8 feat(nvim-cmp): bit of clean up
+b86245c fix(LuaSnip): update snippet require
+b96afbd fix(Autocomplete): fix autocomplete dying randomly on buffers
+621ca82 feat(NvimTree): Update setup config
+ebd949c fix: confusing bool for default null ls sources
+0cc8369 fix: formatting autocmd queued only once
+850c383 revert: back to prettierd
+f302eb8 refactor(LSP): use prettier over prettierd
+b968af5 fix(LSP): respect user configs for formatting
+885ab36 Required NVIM v0.8.0
+44b2cf5 Update readme.md (#66)
+5678c82 fix: reorder imports
+3cb6666 fix: update nightfox colors (#58)
+2bcc306 fix: update to resolve nvim breaking changes, format + server_capabilities
+9556878 feat: update cmp integration
+6eb01f3 refactor: more autocmd api updates
+8b5f9f4 fix: git branch icon
+a32b2d4 feat: Update more autocmd calls to new api
+5a8378a Fix inconcistency with <leader>ff in dashboard (#53)
+7c14034 feat(commands): use new autocmd api
+a10143d fix: rm error when config.config.editor is not present
+bfaee95 feat(pyright): better defaults
+34e827f feat(lsp): add pyright support
+6bb5f2b fix: remove opt from nvim-tree
+aeecb23 feat: clean up packerInit file
+981b309 feat(readme): update install snippet
+65a216e feat(readme): clean up config readme
+7984d76 feat(readme): update mapping links
+fafe70e feat: clean up a bit
+4bae8cf feat(core): move user config init to core
+099b761 feat(config): update examples
+d201b8f feat(lsp): easier null_ls configuration
+ff28555 Added FastWrap for nvim-autopairs (#44)
+bdef698 feat(lsp): add shellcheck diagnostics
+54dcb22 feat(lsp): prettierd enabled!!
+d05a7ec fix: fix nvim-notify dep on logger util
+6f1449d fix(themes): fix github theme colors
+680869e fix(themes): fix catppuccin colors
+b505570 fix: gruvbox status line colors
+9680e81 feat: delete mappings for tabs and buffers
+2be3e66 rebase: fix mappings
+6102571 refactor: smaller config footprint
+478368f feat(enfocado): added more enfocado settings (#41)
+99adce7 fix(mappings): use pcall over require since cosmic.config.plugins might not be present
+80580b7 fix(session): leader key set properly
+988b14e fix(mappings): load nvim tree mappings always
+57915ad feat(cosmic-ui): update border style prop
+60cf021 feat(statusline): remove unused hl
+df13f58 refactor(highlights): set_highlight over highlight
+3be2d31 feat(notify): change animation
+36a077f feat(plugins): load nvim-notify after colorscheme has loaded (#37)
+8be0efa feat(readme): add new themes
+17cc41a feat(themes): add github
+485a3f3 feat(themes): add kanagawa.lua
+2f6ddcc fix(lsp): readd eslint condition
+cb27724 feat(lsp): format command
+54018cd fix(lsp): remove conditional for eslint
+797cc44 feat(lsp): prettierd -> prettier w/prefer local
+585dc3b feat(lsp): swap hard coded schemas for schemastore
+0aef3f6 refactor: clean up some mappings and lazy loading
+66f29d8 feat(mappings): ts utils maps only are set when tsserver is active
+77a4f36 refactor: cleaner table merging
+18c4971 feat(mappings): attach lsp mappings to buffers only
+d6befbe feat(core): resize mappings and autoresize autocmd
+1d09e75 feat(lsp): jsonls schemas
+7232abb feat(editor): adjust timeoutlen + sort
+a957874 feat(plugins): utilize ts_context_commentstring for all filetypes
+74a287d refactor(lsp): rename sumneko provider file
+f562882 feat(plugins): nvim-autopairs ts support
+f6139b8 feat(plugins): add ft ignore for nvim-tree
+adf429b feat(plugins): add gitsigns settings
+4f5d026 feat(statusline): move back to NTBBloodbath fork
+d1c5b01 feat(telescope): slight adjustment to width and height for flex layout
+b6b9bac feat(telescope): use flex layout and tighten w/h's
+eabc91a feat(telescope): grep current word mapping
+d634483 feat(diagnostics): add header + icon
+4de9c23 feat(plugins): replace need for lspkind
+f522d0f feat: border config setting
+13164d4 refactor(plugins): remove get_border refs
+68ff49d feat(cosmic-ui): no need to pass icons
+341fce0 feat(readme): update screenshots
+da5fa17 feat(plugins): reorder
+b105b15 refactor(cosmic-ui): readd diagnostics and handlers
+de5e977 feat(luasnip): enable autosnippets & config settings
+cbb5322 feat(lsp): enable single_file_mode
+e9eba4e refactor(autocomplete): move file to plugins
+9a470dd feat(themes): catppuccin back on main branch
+fa21ba4 fix(enfocado): improvements are made to the configs (#35)
+2830ade fix(examples): alpha sort
+d993631 feat(treesitter): add additional languages to install list
+77e8269 feat(plugins): readd autocomplete from cosmic-ui
+c7dded4 fix(plugins): update telescope mappings
+e425ee8 feat(lsp): update null ls settings
+daf5020 feat(readme): clean up features list
+f90395f feat(mappings): update code action mapping defaults
+ba8adc5 fix(lsp): disable formatting for lsp w/user opts
+2444c5d fix(statusline): user icon properly passed to statusline
+11af995 feat(lsp): check for eslint config and package.json before starting eslint
+20c5f2d feat(readme): bump required nvim version
+4c4b088 feat(config): update examples for cosmic-ui
+880ccdb feat(plugins): clean up cosmic-ui integration
+efb15a9 feat(plugins): switch to Comment.nvim
+0ffbbf0 feat(terminal): link floaterm to normalfloat
+e79fdf0 feat(terminal): rounded borders
+3954627 refactor(plugins): rename cosmic/modules and some plugins
+2538f0a feat: add stylua config
+3ce2b74 feat(statusline): clean up lsp title
+fb7722d feat(colors|statusline): clean out unneeded color definitions
+33ee196 feat(lsp): remove jsonls settings
+14bf177 fix(plugins): properly pass diagnostics settings to cosmic-ui
+e13ad63 feat(plugins): add cosmic-ui border default
+e166b50 feat(plugins): clean up requires
+0f975ea feat(lsp): add null_ls builtins
+f79715d feat: clean up
+c451df0 feat(ui): update cosmic-ui - autocomplete
+5a59dfa feat(tsserver): update ts-utils settings to latest
+d3c2a3b feat(statusline): restore proper lsp look and feel & new get_highlight
+1978317 feat(statusline): clean up bracket provider
+1866fc1 feat(statusline): fork galaxyline
+3cbf8cb feat(theme): add catppuccin settings
+1b3c879 feat(themes): catppuccin full release, yay
+3781f50 feat(readme): add cosmic-ui to readme
+14f4d39 fix(config): pass along diagnostic configs to cosmic-ui
+3c1a016 feat(plugins): Cosmic-ui (#31)
+a3332a8 feat(utils): remove timeout for update success notification
+3231394 fix(lsp): pass full config to null_ls
+333a4e1 feat(plugins): do not lazy load auto-session
+13a5d00 feat(nvim-tree): enable rnu for file explorer
+03e3ea2 feat(editor): remove unneeded opt
+cc86398 feat(mappings): update line diagnostic map
+c19b565 refactor(theme): clean up theme + better organization
+ca9e3a0 refactor: overhaul of organization, PLEASE RUN :CosmicReloadSync
+dfab8f4 feat(configs): config.comments -> config.todo_comments
+7acde5a fix(readme): typo + moar emojis
+720ee95 feat(statusline): new default icon
+d2c42be refactor(core): rename some core modules
+c7d28b0 feat(configs): add more plugin config options
+f6c4a9d feat(config): add nvim_tree config setting
+e9e84bb fix(config): editor changes are respected properly
+02455d6 feat(lsp): bump formatting timeout
+1ceb0fc feat(lsp): clean up
+32cafa4 feat(lsp): force install less servers
+8b89755 refactor(diagnositcs): address breaking changes from neovim core
+130bb69 feat(readme): update links to new org
+f6f49dd feat(utils): clean up logger
+bc79ee1 feat(utils): CosmicReload will recompile
+7c0be72 feat(plugins): move some configs to core
+92734a9 feat(themes): add enfocado
+d9eeeae feat(themes): add dracula
+b485e1c feat(themes): add onedark
+fb7b136 feat(commands): update notification
+6fbfee2 feat: tiny clean up
+9b27aae added nightfox colors (#29)
+a14a4bb feat(commands): Cosmic reload now will properly update themes on the fly!!
+bbdf42e feat(themes): lock catppuccino commit hash
+3683a23 feat(readme): update commands
+34da871 fix(core): fix occasional treesitter issues
+d8c561d fix(themes): catppuccin reference fix
+2860270 fix:(theme): fix default theme reference
+2b290d5 fix(themes): fix gruvbox and statusline hi
+8e4c45a feat(plugins): move theme plugins to new file
+2fb6bdd feat(themes): clean up theme config names
+4796732 fix(themes): gruvbox notify warning
+461d5c9 fix(commands): clean up
+1d8f81b feat(utils): slightly better reload functions
+fab66bb fix(utils): fix issue with reloading cosmic
+292ffbb fix(highlights): remove highlight link
+ef020a4 feat(highlights): clean up
+525bf1f fix(colors): return false when theme doesn't load
+a6858e9 feat(themes): add rose pine
+c0968ef fix(themes): tokyonight floatterm border color
+e680464 feat(snippets): lazy load snippets only
+6d9ee05 feat(readme): add theming docs
+0a2a946 feat(themes): add gruvbox
+a76888f feat(themes): add nord
+9d3e73b fix: theme disabling
+2326c8b feat(themes): new themes!!
+7fc6a26 fix(statusline): fix lsp active clients
+ff3a7a5 feat(plugins): clean up
+9211e64 feat(readme): add uninstall details
+e4370f5 feat(readme): move dashboard screen up
+76817b1 feat(config): clean up comments
+e0503e4 feat(config): clean up
+0d3e6a0 feat(config): add config example for utils
+9ced86d feat(readme): update readme with null-ls
+3aab287 feat(lsp): trade efm and eslint for null-ls
+c11986e fix(core): fix nvim version error not showing
+ef19b15 feat(snippets): add friendly snippets
+abed044 feat(utils): clean up
+e552342 feat(utils): update command enhancements
+7fb184f fix: move commands file
+254276a feat(readme): update statusline screens
+85fea07 feat(ui): cleaner msg
+9353418 feat(utils): better update function
+8ec2a71 feat(readme): add new wiki link for commands
+adb8887 feat(readme): update with new commands
+6c50df3 feat(core): Add CosmicUpdate, CosmicReload, CosmicReloadConfig commands
+0e578c1 feat(plugins): small clean up
+fab75c9 feat(statusline): little clean up
+f66766a fix(statusline): better statusline bg
+ecf36ee feat(statusline): show active lsp clients
+734d1d2 feat(readme): update config links
+02cc313 feat(config): add readme and clean up dir
+56e1a36 feat(plugins): clean up
+872ed8e fix(plugins); fix missing lspkind error
+5e77075 feat(plugins): decouple statusline disable from theme
+4f3323d feat(readme): add dashboard
+09bd4d8 feat(readme): better discord shield
+7cff9dc refactor(config): rename example configs
+16cfc46 feat(plugins): even more perf yo
+0270f32 feat: perf improvments 🚀
+6e21b1d feat(plugins): clean up
+ee77ff2 feat(readme): moar screenshots link
+3872697 feat(readme): Update screenshots
+8001101 feat(config): clean up readme
+a96c4cc refactor(lsp): move lua defaults to provider
+16884c1 refactor(config): move defaults to appropriate places
+c44df0d fix: grep string on dashboard
+d4b0ff4 feat(dashboard): add repo as footer
+1b7df44 fix(dashboard): fix icons
+a195ca4 feat(plugins): Added Dashboard! :D
+a795f09 feat(core): add check for nvim 0.6
+7b75433 feat(mapping): <leader>f{x} for basic nav mappings, <leader>s was...not great
+4ea5b44 fix(plugins): treesitter not being installed when opening empty buffer on initial installation
+ee11dde fix: disable cmp cmdline
+362a77e feat: update cmp mappings, fix: auto session save issues when notification is present
+a50452b fix(plugins): fix dependancy order
+4e46b16 fix(config): lsp config settings don't break if options arent set
+b63e630 feat(readme): slightly better screenshots
+07a0130 fix(plugins): packer background is correct color
+c95290c feat(plugins): lazy load autocomplete
+449a50d feat(lsp): add lua defaults to config
+0816c00 refactor(mappings): update mappings to follow better semantics
+065ebfa feat(plugins): cleaner todo highlights
+54bcdf4 feat(plugins): add filetype.nvim for perf
+a00aaa6 feat(plugins): add todo highlight
+88de0e2 fix(nav): fix mappings
+e6ee76c feat(core): some clean up
+25060f1 feat(file-explorer): remove broken icon on nvim tree statusline
+7e3ce50 feat(utils): learning some plenary
+f1230ee fix(plugins): fix occasional notify error if it loads before theme
+8064cf3 feat(config): full vim.diagnostic config settings
+9ed1d49 feat(config): add ability to add ensured_installed for treesitter
+8dde6a3 feat(config): add ability to add custom lsp server options
+f4e7571 feat(config): allow default theme to be disabled, (you will need to implement your own statusline if you do this)
+d9c294e refactor(utils): clean out inappropriate methods
+a6b5dd1 fix(mappings): fix workspace mappings
+9b64d35 fix(autocomplete): update autopairs setting
+303d01b feat(lsp): move rename change to title
+8433f2a feat(readme): document plugin usage better
+2a75928 feat(readme): update rename notification screenshot
+2756730 feat(lsp): show name change in notification
+f7d9085 feat(config): toggle rename notification
+6aa3e10 feat(readme): better rename screenshot
+730e7e3 feat(lsp): tweak formatting sync timeout
+4de1898 feat(core): Rename notifications are cleaner
+22a3399 feat(readme): add rename notification screenshot
+cfc22da feat(core): Check out renaming now :)
+3b6e421 feat: cleaner string formats
+42ceab0 feat(config): add better mapping documentation
+d26cefb feat(core): cleaner requires for core
+0deb566 feat(config): add ability to replace statusline
+4709170 feat(theme): add legacy sign highlights
+d746f70 fix(config): allow highlights to be overridable
+95161af fix(lsp): fix code actions not working due to bad maps
+40b3d1e feat(nav): wider reference windows
+333d02c fix(config): fix missing comma (#11)
+bae37ab fix(config): fix missing commas (#12)
+75a8069 fix(config): fix mapping overriders
+f7ca862 fix(plugins): ensure defaults for add
+b377cf8 fix(mappings): fix leader key for realz
+55eaa0f fix(mappings): fix leader key
+99e6d85 fix(mappings): consolidate leader key usage
+75525ad fix(mapping): fix ts utils mappings
+4acead6 feat(config): add configurable diagnostic settings
+3233a42 refactor(plugins): shorter plugin names
+1c3138b fix(plugins): packer sync on first install
+d4f1e23 feat(lsp): use autogroup for autocmd
+ae6363c fix(plugins): fix packer reinstallation issues
+15986b4 feat(config): add ability to disable some core plugins + ability to add plugins
+243cc19 refactor(config): set better defaults
+d5006d9 chore(readme): add treesitter help
+1e6b58c fix(readme): typos
+ae48287 fix(lsp): auto format, sane default for timeout
+9366f60 fix(lsp): auto format use sync
+b7c05ec fix(config): do not format by default
+950479d refactor(lsp): remove lua provider file and rely on lsp-installers settings
+e3c96ce fix(config): actually format on save
+be8518d Merge pull request #10 from mattleong/feat/config
+4444126 feat(config): settable main icon
+7566c55 feat(readme): update w/config
+9e72baf chore(configs): clean up
+fb512d0 fix(plugins): sync and install on first run
+6306ed7 feat(config): additional mappings config
+01af4f4 feat(config): add editor config
+ea2b4f0 feat(config): add helper function for formatters
+10b52b8 fix(lsp): run autoformat command just once
+554593e feat(config): default config
+cd5cee0 feat(config): move format to better place
+aa32ac0 fix(lsp): install if defined on config
+ce86cc1 fix(efm): fix formatting config settings
+d4e3149 feat(config): add new config file
+a417d1d feat(readme): add git badges
+43f37c3 refactor(navigation): file-navivation -> navigation
+c61dc5a feat(lsp): updated lsp mappings to utilize telescope, update telescope settings
+6dc398b feat(diagnostics): add min severity level for v text, cleaner mappings
+0d75865 feat(terminal): use shell as title
+ecb38b3 feat(theme): fix virtual text and clean highlights
+6b1da29 fix(autocomplete): disable cmp cr mapping that was messing with autopairs
+6ff029a feat(autocomplete): better luasnip support
+4aa419b fix(sessions): fix auto save issue
+d123577 feat(autocomplete): reorder nvim-cmp sources
+99cdaae refactor(plugins): switch to kommentary because Comment.nvim did not support JSX well
+4e1bce9 feat(readme): add wiki links
+e46d38e feat(plugins): Remove unused plugin
+263b0d1 fix(diagnostics): show border around diagnostics
+bd2f074 feat(readme): add installation wiki page reference
+b1632ff chore(readme): clean up
+b61e779 feat(readme): add mappings to readme
+97e809d chore(statusline): clean out deprecated helper
+1d90b8d fix(efm): cleaner formatting conditionals
+3265d82 fix(diagnostics): check for vim.diagnostics for 0.5.1 users
+093fbc0 chore(file-navigation): clean up preview title prop
+968338a chore(readme): add first run steps
+fbbb3a5 fix(cosmic): move packer compiled file to load after packer
+3eaab80 chore(readme): fix typo
+e6c6ed2 chore(readme): fix bad screen
+1810051 chore(readme): better screenshots
+86f6ed8 chore(readme): fix typo
+3d4e2d8 Update readme
+a9cbaf7 Init 🚀
+2f3f969 Initial commit
+
