@@ -18,18 +18,18 @@ if is_available('mason.nvim') then
 end
 
 if is_available('smart-splits.nvim') then
-  --[[ map('n', '<C-h>', function() ]]
-  --[[   require('smart-splits').move_cursor_left() ]]
-  --[[ end, { desc = 'Move to Left split' }) ]]
-  --[[ map('n', '<C-j>', function() ]]
-  --[[   require('smart-splits').move_cursor_down() ]]
-  --[[ end, { desc = 'Move to below split' }) ]]
-  --[[ map('n', '<C-k>', function() ]]
-  --[[   require('smart-splits').move_cursor_up() ]]
-  --[[ end, { desc = 'Move to above split' }) ]]
-  --[[ map('n', '<C-l>', function() ]]
-  --[[   require('smart-splits').move_cursor_right() ]]
-  --[[ end, { desc = 'Move to right split' }) ]]
+  map('n', '<C-h>', function()
+    require('smart-splits').move_cursor_left()
+  end, { desc = 'Move to Left split' })
+  map('n', '<C-j>', function()
+    require('smart-splits').move_cursor_down()
+  end, { desc = 'Move to below split' })
+  map('n', '<C-k>', function()
+    require('smart-splits').move_cursor_up()
+  end, { desc = 'Move to above split' })
+  map('n', '<C-l>', function()
+    require('smart-splits').move_cursor_right()
+  end, { desc = 'Move to right split' })
   map('n', '<C-Up>', function()
     require('smart-splits').resize_up()
   end, { desc = 'Resize split up' })

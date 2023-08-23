@@ -50,10 +50,10 @@ map('n', '<leader>sh', '<C-w>s', { desc = 'Split Window Horizontally' })
 map('n', '<leader>sx', ':close<CR>', { desc = 'Close Current Split Window' })
 map('n', '<leader>w', '<C-w>q', { desc = 'Close Split' })
 -- splits navigation
-map('n', '<C-k>', '<C-w>k', { desc = 'Move to Upper Split' })
-map('n', '<C-j>', '<C-w>j', { desc = 'Move to Down Split' })
-map('n', '<C-l>', '<C-w>l', { desc = 'Move to Right Split' })
-map('n', '<C-h>', '<C-w>h', { desc = 'Move to Left Split' })
+--[[ map('n', '<C-k>', '<C-w>k', { desc = 'Move to Upper Split' }) ]]
+--[[ map('n', '<C-j>', '<C-w>j', { desc = 'Move to Down Split' }) ]]
+--[[ map('n', '<C-l>', '<C-w>l', { desc = 'Move to Right Split' }) ]]
+--[[ map('n', '<C-h>', '<C-w>h', { desc = 'Move to Left Split' }) ]]
 -- vim-maximizer
 map('n', '<leader>ie', '<C-w>=', { desc = 'Make Splits Equal' })
 map('n', '\\', '<cmd>vsplit<cr>', { desc = 'Vertical Split' })

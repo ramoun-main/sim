@@ -32,15 +32,15 @@ return {
 
     require('noice').setup(config)
 
-    map('n', '<c-j>', function()
+    map('n', '<c-J>', function()
       if not require('noice.lsp').scroll(4) then
-        return '<c-j>'
+        return '<c-J>'
       end
     end)
 
-    map('n', '<c-k>', function()
+    map('n', '<c-K>', function()
       if not require('noice.lsp').scroll(-4) then
-        return '<c-k>'
+        return '<c-K>'
       end
     end)
   end,
