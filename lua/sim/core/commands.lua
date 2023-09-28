@@ -33,7 +33,7 @@ vim.api.nvim_create_autocmd('BufWritePre', {
 
 -- add new empty line at end of file on save
 -- Add new line to the end of the file
-vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
+--[[ vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
   group = vim.api.nvim_create_augroup('UserOnSave', {}),
   pattern = '*',
   callback = function()
@@ -43,7 +43,7 @@ vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
       vim.api.nvim_buf_set_lines(0, last_nonblank, n_lines, true, { '' })
     end
   end,
-})
+}) ]]
 
 cmd('set whichwrap+=<,>,[,],h,l')
 cmd([[set iskeyword+=-]])
