@@ -12,5 +12,5 @@ return function()
   vim.cmd('ColorizerToggle')
   require('colorizer').setup(nil, { css = true })
   vim.cmd(':ColorizerAttachToBuffer')
-  map('n', '<leader>ct', ':ColorizerToggle<CR>')
+  map('n', '<leader><leader>c', ':ColorizerToggle<CR>')
 end
