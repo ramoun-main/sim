@@ -11,8 +11,8 @@ return function()
   }, user_config.plugins.luasnip or {}))
 
   -- extend html snippets to react files
-  require('luasnip').filetype_extend('javascriptreact', { 'html' })
-  require('luasnip').filetype_extend('typescriptreact', { 'html' })
+  require('luasnip').filetype_extend('javascriptreact', { 'html', 'css' })
+  require('luasnip').filetype_extend('typescriptreact', { 'html', 'css' })
 
   -- load snippets (friendly-snippets)
   require('luasnip.loaders.from_vscode').lazy_load()
