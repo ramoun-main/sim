@@ -8,7 +8,8 @@ dc4873d feat: update readme
 9d2c3a3 feat: add copilot
 2b3f18d refactor(:rocket:): add new line to readme :book:
 
-fc94436 feat: refactor plugins
+feat: refactor all plugins
+# fc94436 feat: refactor plugins // this one is replaced
 
 39cb5aa refactor: colorscheme
 07ac660 refactor: lualine

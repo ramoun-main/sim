@@ -6,6 +6,8 @@ g.mapleader = ' '
 local indent = 2
 
 local options = {
+  -- disable unFoldAll by default
+  foldlevelstart = 99, -- disable unFoldAll by default
 
   -- misc
   backspace = { 'eol', 'start', 'indent' },

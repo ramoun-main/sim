@@ -1,0 +1,9 @@
+https://github.com/mattn/emmet-vim
+https://dev.to/hayden/the-only-5-vim-plugins-i-need-4b7h
+https://vimawesome.com/
+https://www.freecodecamp.org/news/a-guide-to-modern-web-development-with-neo-vim-333f7efbf8e2/
+https://stackoverflow.com/questions/3173963/useful-vim-plugins-for-web-development-and-design-php-html-css-javascript
+https://medium.com/@felipe.anjos/vim-for-web-development-html-css-in-2020-95576d9b21ad
+https://github.com/rockerBOO/awesome-neovim
+https://github.com/ray-x/web-tools.nvim
+https://github.com/Jezda1337/nvim-html-css
