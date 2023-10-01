@@ -26,3 +26,24 @@
 - vim vs emacs
 - emacs doom -> rusti
 - [imp - all plugins](https://github.com/ramoun-main/sim/commit/fc944364397d3146eff9542a2c0797623a650d38)
+
+## 2. Git
+
+- [smartgit](https://www.syntevo.com/smartgit/)
+- [sublime merge](https://www.sublimemerge.com/)
+- [git ahead](https://gitahead.github.io/gitahead.com/)
+- [gitg](https://wiki.gnome.org/Apps/Gitg/)
+- [glint](https://glint.info/en/)
+- [gitfiend](https://gitfiend.com/)
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
