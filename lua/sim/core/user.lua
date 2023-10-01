@@ -24,7 +24,7 @@ local default_config = {
   },
   lsp = {
     format_on_save = true, -- true/false or table of filetypes {'.ts', '.js',}
-    format_timeout = 2000,
+    format_timeout = 3000,
     rename_notification = true,
     -- table of callbacks pushed via plugins
     on_attach_mappings = {},
