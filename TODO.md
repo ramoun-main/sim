@@ -25,3 +25,4 @@
 - navigate terminal with keyboard
 - vim vs emacs
 - emacs doom -> rusti
+- [imp - all plugins](https://github.com/ramoun-main/sim/commit/fc944364397d3146eff9542a2c0797623a650d38)
