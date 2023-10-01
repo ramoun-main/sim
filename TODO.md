@@ -38,3 +38,12 @@
 - [eclipse](https://github.com/eclipsesource/megit)
 - [aures](https://aurees.com/)
 - [gittyup](https://murmele.github.io/Gittyup/)
+
+## 3. Plugins
+
+- [nvim ide](https://github.com/ldelossa/nvim-ide)
+- [bufferline](https://github.com/akinsho/bufferline.nvim)
+- [vim devicons](https://github.com/ryanoasis/vim-devicons)
+- [persistence](https://github.com/folke/persistence.nvim)
+- [trouble](https://github.com/folke/trouble.nvim)
+- [awesome](https://project-awesome.org/rockerBOO/awesome-neovim)
