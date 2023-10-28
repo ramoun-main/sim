@@ -47,3 +47,10 @@
 - [persistence](https://github.com/folke/persistence.nvim)
 - [trouble](https://github.com/folke/trouble.nvim)
 - [awesome](https://project-awesome.org/rockerBOO/awesome-neovim)
+
+## 4. setup
+
+- [1.windows](https://github.com/folke/windows.nvim)
+- [2.scrollbars](https://github.com/folke/nvim-scrollbar)
+- [3.aerial](https://github.com/folke/aerial.nvim)
+- [4.dot](https://github.com/folke/dot/tree/master/nvim/lua/plugins)
