@@ -16,59 +16,77 @@ local setup = {
   },
 }
 
+local opts = {
+  mode = 'n', -- Normal mode
+  prefix = '<leader>',
+  buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+  silent = true, -- use `silent` when creating keymaps
+  noremap = true, -- use `noremap` when creating keymaps
+  nowait = false, -- use `nowait` when creating keymaps
+}
+
 local keys = {
-  ['<leader>'] = {
-    b = {
-      name = '+buffer',
-    },
-    c = {
-      name = '+quickfix',
-    },
-    f = {
-      name = '+find',
-    },
+  ['<leader>🚀'] = {
     h = {
       name = '+gitsigns',
       t = {
         name = '+toggle',
       },
     },
-    l = {
-      name = '+lsp',
-      d = {
-        name = '+diagnostics',
-      },
-      t = {
-        name = '+toggle',
-      },
-      w = {
-        name = '+workspace',
-      },
-    },
-    g = {
-      name = '+goto',
-    },
     n = {
       name = '+tree',
     },
-    s = {
-      name = '+save',
-    },
-    S = {
-      name = '+Session',
-    },
-    t = {
-      name = '+tab',
-    },
-    p = {
-      name = '+lazy (plugins)',
-    },
-    v = {
-      name = '+git (vsc)',
-      t = {
-        name = '+toggle',
-      },
-    },
+  },
+}
+
+local mappings = {
+  ['n'] = { '<cmd>enew<cr>', 'New File' },
+  ['e'] = { ':NvimTreeToggle<CR>', 'Explorer' },
+  ['u'] = { '<cmd>update!<CR>', 'Update' },
+  ['s'] = { '<cmd>w<cr>', 'Save' },
+  ['q'] = { '<cmd>confirm q<cr>', 'Quit' },
+
+  ['<space>'] = { 'Toggle' },
+
+  b = {
+    name = 'Buffer',
+    c = { '<Cmd>bd!<Cr>', 'Close current buffer' },
+    D = { '<Cmd>%bd|e#|bd#<Cr>', 'Delete all buffers' },
+  },
+
+  c = { 'Quickfix' },
+
+  f = { 'Find' },
+
+  l = {
+    name = 'Lsp',
+    d = { 'Diagnostics' },
+    t = { 'Toggle' },
+    w = { 'Workspace' },
+  },
+
+  i = {
+    name = 'Insert',
+    [';'] = { 'ms<Esc>A;<Esc>`s', 'Semi' },
+    ['/'] = { 'Toggle Comment' },
+  },
+
+  S = { 'Session' },
+
+  p = { 'Lazy (plugins)' },
+
+  v = {
+    name = 'Git (vsc)',
+    t = { 'toggle' },
+  },
+
+  t = { 'Tab' },
+
+  x = { 'Split' },
+
+  g = {
+    name = 'Git',
+    s = { '<cmd>Neogit<CR>', 'Status' },
   },
 }
 
@@ -76,5 +94,5 @@ return function()
   local wk = require('which-key')
   wk.setup(setup)
 
-  wk.register(keys)
+  wk.register(mappings, opts)
 end
