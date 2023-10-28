@@ -261,12 +261,12 @@ map('n', '<leader>rs', ':LspRestart<CR>', { desc = 'mapping to restart lsp if ne
 
 -- Comment : --TODO: is it Comment or Comments
 if is_available('Comment.nvim') then
-  map('n', '<leader>/', function()
+  map('n', '<leader>i/', function()
     require('Comment.api').toggle.linewise.count(vim.v.count > 0 and vim.v.count or 1)
   end, { desc = 'Toggle comment line' })
   map(
     'v',
-    '<leader>/',
+    '<leader>i/',
     "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>",
     { desc = 'Toggle comment for selection' }
   )

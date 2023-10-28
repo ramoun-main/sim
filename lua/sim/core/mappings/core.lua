@@ -12,7 +12,8 @@ map('n', 'gM', 'gm')
 map('n', 'gm', 'gM')
 
 -- clear search highlights
-map('n', '<leader>nh', ':nohl<CR>')
+--[[ map('n', '<leader>nh', ':nohl<CR>') ]]
+map('n', '<CR>', ':nohl<CR>')
 
 -- delete single character without copying into register
 map('n', 'x', '"_x')
@@ -20,7 +21,7 @@ map('n', 'x', '"_x')
 -- increment/decrement numbers (e.g: 7)
 map('n', '+', '<C-a>') -- increment
 map('n', '-', '<C-x>') -- decrement
-map('n', '<leader>;', 'ms<Esc>A;<Esc>`s')
+--[[ map('n', '<leader>;', 'ms<Esc>A;<Esc>`s') ]]
 
 -- tab management
 map('n', '<leader>to', ':tabnew<CR>', { desc = 'open new tab' })
@@ -45,9 +46,9 @@ map('n', '<leader>bn', ':bnext<cr>', { desc = 'Next Buffer' })
 map('n', '<leader>bd', ':bdelete<cr>', { desc = 'Delete Buffer' })
 
 -- splits
-map('n', '<leader>sv', '<C-w>v', { desc = 'Split Window Vertically' })
-map('n', '<leader>sh', '<C-w>s', { desc = 'Split Window Horizontally' })
-map('n', '<leader>sx', ':close<CR>', { desc = 'Close Current Split Window' })
+map('n', '<leader>xv', '<C-w>v', { desc = 'Split Window Vertically' })
+map('n', '<leader>xh', '<C-w>s', { desc = 'Split Window Horizontally' })
+map('n', '<leader>xx', ':close<CR>', { desc = 'Close Current Split Window' })
 map('n', '<leader>w', '<C-w>q', { desc = 'Close Split' })
 -- splits navigation
 --[[ map('n', '<C-k>', '<C-w>k', { desc = 'Move to Upper Split' }) ]]
@@ -88,41 +89,29 @@ map('n', 'n', 'nzzzv', { desc = 'repeats the search forward' })
 map('n', 'N', 'Nzzzv', { desc = 'repeats the search backward' })
 
 -- yank/delete to system clipboard
-map({ 'n', 'v' }, '<leader>y', [["+y]], { desc = 'yank (copy) the selected text to the system clipboard register' })
-map(
-  { 'n', 'v' },
-  '<leader>Y',
-  [["+Y]],
-  { desc = 'yank (copy) the current line, including the newline character, to the system clipboard register' }
-)
-map(
-  { 'n', 'v' },
-  '<leader>d',
-  [["_d]],
-  { desc = 'delete the selected text in visual mode or the current line in normal mode' }
-)
+
+--map({ 'n', 'v' }, '<leader>y', [["+y]], { desc = 'yank (copy) the selected text to the system clipboard register' })
+-- map( { 'n', 'v' }, '<leader>Y', [["+Y]], { desc = 'yank (copy) the current line, including the newline character, to the system clipboard register' })
 
 -- location list
-map('n', '<leader>k', '<cmd>lnext<CR>zz', {
+--[[ map('n', '<leader>k', '<cmd>lnext<CR>zz', {
   desc = 'moves the cursor to the next location in the location list and then centers the line containing the cursor in the middle of the window.',
 })
 map('n', '<leader>j', '<cmd>lprev<CR>zz', {
   desc = 'moves the cursor to the prev location in the location list and then centers the line containing the cursor in the middle of the window.',
 })
-
+]]
 -- Search
 map('n', '<leader>fS', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {
   desc = 'performs a case-insensitive search and replace operation in the entire file. The word under the cursor is used as the replacement for each occurrence of the matched word',
 })
 
 -- format
-map('n', '<leader>F', vim.lsp.buf.format, { desc = 'formatting the current buffer' })
+--[[ map('n', '<leader>F', vim.lsp.buf.format, { desc = 'formatting the current buffer' }) ]]
 
 --
 -- FILE
-map('n', '<leader>ss', '<cmd>w<cr>', { desc = 'Save' })
-map('n', '<leader>q', '<cmd>confirm q<cr>', { desc = 'Quit' })
-map('n', '<leader>n', '<cmd>enew<cr>', { desc = 'New File' })
+
 map('n', '<C-s>', '<cmd>w!<cr>', { desc = 'Force write' })
 map('n', '<C-q>', 'cmd>q!<cr>', { desc = 'Force quit' })
-map('n', '<leader>x', '<cmd>!chmod +x %<CR>', { desc = 'makes the current file executable' })
+--[[ map('n', '<leader>x', '<cmd>!chmod +x %<CR>', { desc = 'makes the current file executable' }) ]]
