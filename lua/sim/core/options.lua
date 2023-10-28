@@ -2,6 +2,7 @@ local opt = vim.opt
 local g = vim.g
 
 g.mapleader = ' '
+g.maplocalleader = ' '
 
 local indent = 2
 
@@ -56,8 +57,9 @@ local options = {
   splitbelow = true, -- force all horizontal splits to go below current window
   splitright = true, -- force all vertical splits to go to the right of current window
   wrap = true, -- don't display lines as one long line
+  breakindent = true, --Enable break indent
 
-  -- backups -- TODO: we need to bring these back or find another backup mechanism to neovim
+  -- backups -- TODO: we need to bring these back or find another backup mechanism to neovim;
   backup = false,
   swapfile = false, -- creates a swapfile
   writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
@@ -69,7 +71,7 @@ local options = {
 
   -- perfomance
   redrawtime = 1500, -- prioritize responsiveness by limitting redrawtime to only 1500
-  timeoutlen = 1000, -- 200  - time to wait for a mapped sequence to complete (in milliseconds)
+  timeoutlen = 1000, -- 200  - time to wait for a mapped sequence to complete (in milliseconds) - whichkey popup
   ttimeoutlen = 20, -- after how much time does key stroke considered a new sequence (useful for vim motions and other )
   updatetime = 300, -- 100 - faster completion (4000ms default)
 
